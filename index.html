@@ -140,11 +140,15 @@ header h1{font-size:22px}
 <div class="status-item"><span class="dot yellow"></span><span class="label">Publish "Assign Webinar Date"</span><span class="tag yellow">Draft</span></div>
 <div class="status-item"><span class="dot yellow"></span><span class="label">GHL form redirect to Thank You</span><span class="tag yellow">Agresh</span></div>
 <div class="status-item"><span class="dot red"></span><span class="label">Build re-engage email sequence</span><span class="tag red">Not Done</span></div>
-<div class="status-item"><span class="dot red"></span><span class="label">Import 80 old leads</span><span class="tag red">Not Done</span></div>
+<div class="status-item"><span class="dot yellow"></span><span class="label">Import 80 old leads</span><span class="tag yellow">In Progress (Agresh uploading)</span></div>
 <div class="status-item"><span class="dot red"></span><span class="label">Fix testimonials heading</span><span class="tag red">Shreyas</span></div>
 <div class="status-item"><span class="dot yellow"></span><span class="label">Mobile responsiveness check</span><span class="tag yellow">Verify</span></div>
 <div class="status-item"><span class="dot yellow"></span><span class="label">Pixel fires on form submit</span><span class="tag yellow">Verify</span></div>
-<div class="status-item"><span class="dot red"></span><span class="label">Launch Meta ads</span><span class="tag red">Blocked</span></div>
+<div class="status-item"><span class="dot green"></span><span class="label">Launch Meta ads</span><span class="tag green">LIVE</span></div>
+<div class="status-item"><span class="dot green"></span><span class="label">Live Dashboard</span><span class="tag green">Done</span></div>
+<div class="status-item"><span class="dot green"></span><span class="label">35 Registrations</span><span class="tag green">Live</span></div>
+<div class="status-item"><span class="dot green"></span><span class="label">Privyr webhook</span><span class="tag green">Done</span></div>
+<div class="status-item"><span class="dot green"></span><span class="label">Email validation (typo detection)</span><span class="tag green">Done</span></div>
 </div>
 </div>
 
@@ -152,6 +156,7 @@ header h1{font-size:22px}
 <div class="tabs">
 <button class="tab-btn active" data-tab="agresh">Agresh</button>
 <button class="tab-btn" data-tab="shreyas">Shreyas</button>
+<button class="tab-btn" data-tab="scripts">Video Scripts</button>
 <button class="tab-btn" data-tab="dj">DJ</button>
 <button class="tab-btn" data-tab="dylan">Dylan</button>
 <button class="tab-btn" data-tab="launch">Launch Checklist</button>
@@ -328,7 +333,7 @@ header h1{font-size:22px}
 <span class="chevron">&#9660;</span>
 </div>
 <div class="priority-body">
-<div class="note">Published and tested. Re-engage page live at: <a href="https://fastidious-chaja-05bc07.netlify.app" target="_blank">fastidious-chaja-05bc07.netlify.app</a></div>
+<div class="note">Published and tested. Re-engage page live at: <a href="https://tqa-hq.github.io/reengage/" target="_blank">tqa-hq.github.io/reengage/</a></div>
 </div>
 </div>
 
@@ -447,6 +452,23 @@ header h1{font-size:22px}
 
 <div class="priority-card">
 <div class="priority-header" onclick="toggleCard(this)">
+<h3><span class="priority-num done">&#10003;</span> Video Ad Scripts</h3>
+<span class="est">Ready</span>
+<span class="chevron">&#9660;</span>
+</div>
+<div class="priority-body">
+<div class="note">4 video scripts ready in the <strong>Video Scripts</strong> tab. Use with HeyGen or record DJ reading them. Each is 30-60 seconds.</div>
+<ul class="bullets">
+<li><strong>Script 1 &mdash; Pain Point:</strong> Opens with IT frustration, pivots to the webinar</li>
+<li><strong>Script 2 &mdash; Authority:</strong> DJ's credentials (CIO Choice 2026, Deloitte/EY/Shell)</li>
+<li><strong>Script 3 &mdash; Urgency:</strong> 3.5M unfilled jobs, AI changing the game</li>
+<li><strong>Script 4 &mdash; Testimonial:</strong> Rajesh Menon from Bangalore &mdash; systems admin to security analyst</li>
+</ul>
+</div>
+</div>
+
+<div class="priority-card">
+<div class="priority-header" onclick="toggleCard(this)">
 <h3><span class="priority-num">6</span> Split Test at Ad Level (after launch)</h3>
 <span class="est">Optional &mdash; do later</span>
 <span class="chevron">&#9660;</span>
@@ -473,6 +495,93 @@ header h1{font-size:22px}
 <li><strong>Replace fake testimonials with Indian ones</strong> &mdash; <span style="color:#22c55e;font-weight:700">DONE</span></li>
 </ol>
 <div class="note">Testimonials: Rajesh Menon (Bangalore), Priya Sharma (NJ), Amit Kulkarni (London)</div>
+</div>
+</div>
+
+</div>
+
+<!-- ============ VIDEO SCRIPTS TAB ============ -->
+<div class="tab-content" id="tab-scripts">
+
+<p style="font-size:14px;color:var(--gray);margin-bottom:16px">4 short video ad scripts for TQA webinar promotion. Each is 30-60 seconds. Use with HeyGen AI video or record DJ reading them live.</p>
+
+<div class="priority-card open">
+<div class="priority-header" onclick="toggleCard(this)">
+<h3><span class="priority-num">1</span> Pain Point</h3>
+<span class="est">30-40 sec</span>
+<span class="chevron">&#9660;</span>
+</div>
+<div class="priority-body">
+<h4 class="section">Hook (first 3 seconds)</h4>
+<p style="font-size:14px;font-weight:700;color:var(--red);margin-bottom:8px">"Stuck in IT wondering if this is it?"</p>
+
+<h4 class="section">Body</h4>
+<p style="font-size:14px;margin-bottom:8px">You've been in IT for years. You're good at what you do. But the pay hasn't moved. The ceiling is real. And every week there's a new headline about layoffs.</p>
+<p style="font-size:14px;margin-bottom:8px">Meanwhile, cybersecurity roles are paying 40-60% more than general IT. Companies can't find enough people. And your IT experience already gives you 60% of what employers want.</p>
+<p style="font-size:14px;margin-bottom:8px">You don't need to start over. You need a roadmap.</p>
+
+<h4 class="section">CTA</h4>
+<p style="font-size:14px;font-weight:700">DJ Naronikar is hosting a free live session on March 19 at 11am EST showing IT pros exactly how to make the switch. 28 years in the industry. No fluff. Just the roadmap. Link below to reserve your seat.</p>
+</div>
+</div>
+
+<div class="priority-card">
+<div class="priority-header" onclick="toggleCard(this)">
+<h3><span class="priority-num">2</span> Authority</h3>
+<span class="est">30-40 sec</span>
+<span class="chevron">&#9660;</span>
+</div>
+<div class="priority-body">
+<h4 class="section">Hook (first 3 seconds)</h4>
+<p style="font-size:14px;font-weight:700;color:var(--red);margin-bottom:8px">"This man helped build cybersecurity programs at Deloitte, EY, and Shell."</p>
+
+<h4 class="section">Body</h4>
+<p style="font-size:14px;margin-bottom:8px">DJ Naronikar has 28 years in cybersecurity. He's worked with Fortune 500 companies. He just won the CIO Choice Award 2026. He's not a course seller. He's the guy companies call when they need real security leadership.</p>
+<p style="font-size:14px;margin-bottom:8px">And on March 19, he's doing something he's never done before. A free live webinar breaking down exactly how IT professionals can transition into cybersecurity &mdash; the right way.</p>
+<p style="font-size:14px;margin-bottom:8px">Which certs actually matter. Which ones waste your money. How to leverage the experience you already have. And the 14-week roadmap his mentees follow.</p>
+
+<h4 class="section">CTA</h4>
+<p style="font-size:14px;font-weight:700">March 19, 11am EST. Free. Limited seats. Link below.</p>
+</div>
+</div>
+
+<div class="priority-card">
+<div class="priority-header" onclick="toggleCard(this)">
+<h3><span class="priority-num">3</span> Urgency</h3>
+<span class="est">30-40 sec</span>
+<span class="chevron">&#9660;</span>
+</div>
+<div class="priority-body">
+<h4 class="section">Hook (first 3 seconds)</h4>
+<p style="font-size:14px;font-weight:700;color:var(--red);margin-bottom:8px">"3.5 million cybersecurity jobs are unfilled right now."</p>
+
+<h4 class="section">Body</h4>
+<p style="font-size:14px;margin-bottom:8px">That's not a prediction. That's today. Companies are desperate for cybersecurity talent and most IT professionals don't realize they're already halfway qualified.</p>
+<p style="font-size:14px;margin-bottom:8px">But here's the thing. This window won't last forever. AI is changing which roles survive and which don't. The IT professionals who pivot now will lock in six-figure cybersecurity careers. The ones who wait will be competing with automation.</p>
+<p style="font-size:14px;margin-bottom:8px">DJ Naronikar is hosting a free live session on March 19 to show you exactly how to make the move. He's done this for 28 years. He'll show you the fastest path.</p>
+
+<h4 class="section">CTA</h4>
+<p style="font-size:14px;font-weight:700">March 19. 11am EST. Free. Seats are filling up. Register now &mdash; link below.</p>
+</div>
+</div>
+
+<div class="priority-card">
+<div class="priority-header" onclick="toggleCard(this)">
+<h3><span class="priority-num">4</span> Testimonial Style &mdash; Rajesh Menon</h3>
+<span class="est">40-50 sec</span>
+<span class="chevron">&#9660;</span>
+</div>
+<div class="priority-body">
+<h4 class="section">Hook (first 3 seconds)</h4>
+<p style="font-size:14px;font-weight:700;color:var(--red);margin-bottom:8px">"6 months ago I was a systems admin making the same salary for 4 years."</p>
+
+<h4 class="section">Body</h4>
+<p style="font-size:14px;margin-bottom:8px">My name is Rajesh. I'm from Bangalore. I'd been in IT for 11 years. I was good at my job but going nowhere. Every promotion went to someone with a cybersecurity background.</p>
+<p style="font-size:14px;margin-bottom:8px">Then I attended DJ Naronikar's webinar. No sales pitch. Just a clear breakdown of which certs matter, how to use my existing IT experience, and a week-by-week plan. I followed it. Within 14 weeks I had my CISSP study plan locked. Within 5 months I landed a security analyst role &mdash; 55% salary increase.</p>
+<p style="font-size:14px;margin-bottom:8px">DJ is doing another free live session on March 19. If you're in IT and feel stuck, this is the session I wish I'd found 5 years earlier.</p>
+
+<h4 class="section">CTA</h4>
+<p style="font-size:14px;font-weight:700">March 19, 11am EST. Free. Register now before seats fill up. Link below.</p>
 </div>
 </div>
 
@@ -527,7 +636,7 @@ header h1{font-size:22px}
 <span class="chevron">&#9660;</span>
 </div>
 <div class="priority-body">
-<p style="font-size:14px">Webhook URL wired into tqa-reengage-v2.html and deployed to: <a href="https://fastidious-chaja-05bc07.netlify.app/" target="_blank">fastidious-chaja-05bc07.netlify.app</a></p>
+<p style="font-size:14px">Webhook URL wired into tqa-reengage-v2.html and deployed to: <a href="https://tqa-hq.github.io/reengage//" target="_blank">tqa-hq.github.io/reengage/</a></p>
 <p style="font-size:14px;margin-top:8px">Agresh's webhook: <code>https://services.leadconnectorhq.com/hooks/cv0yehFtVK84960e2GsO/webhook-trigger/90b5cdb3-71d1-4026-9172-948fdd6e5828</code></p>
 </div>
 </div>
@@ -635,8 +744,9 @@ header h1{font-size:22px}
 
 <div class="link-grid">
 <div class="link-row"><span class="link-label">Live Website</span><a href="https://thequantumachievers.com" target="_blank">thequantumachievers.com</a></div>
-<div class="link-row"><span class="link-label">Landing V4 (Netlify)</span><a href="https://genuine-parfait-373179.netlify.app" target="_blank">genuine-parfait-373179.netlify.app</a></div>
-<div class="link-row"><span class="link-label">Re-engage Page</span><a href="https://fastidious-chaja-05bc07.netlify.app" target="_blank">fastidious-chaja-05bc07.netlify.app</a></div>
+<div class="link-row"><span class="link-label">Landing Page (new)</span><a href="https://tqa-hq.github.io/landing/" target="_blank">tqa-hq.github.io/landing/</a></div>
+<div class="link-row"><span class="link-label">Re-engage Page (new)</span><a href="https://tqa-hq.github.io/reengage/" target="_blank">tqa-hq.github.io/reengage/</a></div>
+<div class="link-row"><span class="link-label">Live Dashboard</span><a href="https://tqa-hq.github.io/dashboard/" target="_blank">tqa-hq.github.io/dashboard/</a></div>
 <div class="link-row"><span class="link-label">GHL Location ID</span><code>cv0yehFtVK84960e2GsO</code></div>
 <div class="link-row"><span class="link-label">GHL Form</span><a href="https://api.leadconnectorhq.com/widget/form/SPVKhYWoL6gnMklMR1Qi" target="_blank">api.leadconnectorhq.com/widget/form/SPVKhYWoL6gnMklMR1Qi</a></div>
 <div class="link-row"><span class="link-label">Meta Pixel</span><code>1589502282075800</code></div>
@@ -651,7 +761,7 @@ header h1{font-size:22px}
 </div><!-- .container -->
 
 <footer>
-TQA Launch Hub &mdash; Built by Dylan &nbsp;|&nbsp; Questions? Message the group chat.
+TQA Launch Hub &mdash; Built by Elevated AI &nbsp;|&nbsp; Questions? Message the group chat.
 </footer>
 
 <script>
