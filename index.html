@@ -813,6 +813,34 @@ if(el)el.checked=state[id];
 }catch(e){}
 }
 loadChecks();
+
+// Live data from dashboard API
+var DATA_URL='https://script.google.com/macros/s/AKfycbz1Yzxt7G2fr58-4ALOg81ysLK6CCxsOic9kRd6pFjXnfsdhj6zz9gRPMZ9R0E35y_QbQ/exec';
+function fetchLiveData(){
+fetch(DATA_URL).then(function(r){return r.json();}).then(function(d){
+if(d.totalRegistrations){
+// Update the registration status item
+var items=document.querySelectorAll('.status-item .label');
+for(var i=0;i<items.length;i++){
+if(items[i].textContent.indexOf('Registrations')>-1){
+var pct=Math.round((d.totalRegistrations/50)*100);
+items[i].textContent=d.totalRegistrations+' Registrations ('+pct+'% of target)';
+break;
+}
+}
+// Update launch checklist header
+var crit=document.querySelector('#tab-launch .critical');
+if(crit){
+var now=new Date();
+var diff=new Date('2026-03-19T11:00:00-05:00')-now;
+var days=Math.max(0,Math.ceil(diff/86400000));
+crit.textContent=days+' DAYS TO WEBINAR (March 19). Ads are LIVE. '+d.totalRegistrations+' registrations. Fix remaining red items ASAP.';
+}
+}
+}).catch(function(){});
+}
+fetchLiveData();
+setInterval(fetchLiveData,300000);
 </script>
 </body>
 </html>
