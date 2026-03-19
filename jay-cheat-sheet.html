@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jay's Close Sheet — TQA March 19</title>
+<title>Jay — TQA Reference Card</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -14,498 +14,319 @@ body{font-family:'Inter',sans-serif;background:#040D1A;color:#C8DDE8;line-height
 .container{max-width:900px;margin:0 auto;padding:30px 40px 80px}
 .section{margin-bottom:36px}
 .section-title{color:#fff;font-size:18px;font-weight:900;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1A3A5C}
-.card{background:#0D1B3E;border:1px solid #1A3A5C;margin-bottom:12px;overflow:hidden}
-.card-q{padding:14px 20px;cursor:pointer;display:flex;align-items:flex-start;gap:12px}
-.card-q:hover{background:#091529}
-.q-icon{color:#EF4444;font-size:18px;flex-shrink:0;margin-top:2px}
-.q-text{color:#fff;font-size:14px;font-weight:700}
-.card-a{padding:0 20px 16px 50px;font-size:13px;color:#C8DDE8;line-height:1.8}
-.card-a strong{color:#22C55E}
-.card-a em{color:#F4A847;font-style:normal;font-weight:600}
-.guarantee{background:rgba(34,197,94,.1);border:2px solid #22C55E;padding:20px;margin-bottom:12px}
-.guarantee h3{color:#22C55E;font-size:14px;font-weight:700;margin-bottom:8px}
-.guarantee p{font-size:13px;color:#C8DDE8}
+.card{background:#0D1B3E;border:1px solid #1A3A5C;padding:20px;margin-bottom:12px}
+.card h3{color:#fff;font-size:14px;font-weight:700;margin-bottom:12px}
+.card h3.green{color:#22C55E}
+.card h3.gold{color:#F4A847}
+.card h3.teal{color:#00B4D8}
+.card h3.red{color:#EF4444}
+.card p{font-size:13px;margin-bottom:8px}
+.card ul{list-style:none;padding:0}
+.card li{font-size:13px;padding:6px 0;border-bottom:1px solid rgba(26,58,92,.3);padding-left:16px;position:relative}
+.card li:last-child{border-bottom:none}
+.card li::before{content:"→";position:absolute;left:0;color:#F4A847}
+.highlight{background:rgba(244,168,71,.1);border:1px solid #F4A847;padding:16px 20px;margin:12px 0}
+.highlight strong{color:#F4A847}
 .stripe-box{background:#091529;border:2px solid #22C55E;padding:20px;margin:16px 0;text-align:center}
-.stripe-box .label{color:#6B8FA8;font-size:10px;letter-spacing:2px;font-weight:700;margin-bottom:8px}
-.stripe-box a{color:#22C55E;font-size:14px;font-weight:700;text-decoration:none;display:block;margin:8px 0}
-.flow-box{background:#091529;border-left:3px solid #00B4D8;padding:16px 20px;margin:12px 0;font-size:13px}
-.flow-box .step-num{color:#00B4D8;font-weight:900;font-size:12px;letter-spacing:1px;margin-bottom:4px}
+.stripe-box a{color:#22C55E;font-size:16px;font-weight:700;text-decoration:none;display:block;margin:10px 0}
+.stripe-box .secondary a{color:#F4A847;font-size:14px}
+.stripe-box .label{color:#6B8FA8;font-size:10px;letter-spacing:2px;font-weight:700;margin-bottom:4px}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.stat{background:#091529;border:1px solid #1A3A5C;padding:16px;text-align:center}
+.stat-num{font-size:28px;font-weight:900;color:#F4A847}
+.stat-num.green{color:#22C55E}
+.stat-num.teal{color:#00B4D8}
+.stat-label{font-size:10px;color:#6B8FA8;letter-spacing:2px;margin-top:4px}
+.journey{background:#0D1B3E;border:1px solid #1A3A5C;padding:24px;margin:16px 0}
+.j-step{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(26,58,92,.3)}
+.j-step:last-child{border-bottom:none}
+.j-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0}
+.j-green{background:#22C55E;color:#040D1A}
+.j-gold{background:#F4A847;color:#040D1A}
+.j-teal{background:#00B4D8;color:#040D1A}
+.j-red{background:#EF4444;color:#fff}
+.j-text{font-size:13px}
+.j-text strong{color:#fff}
 .tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:3px 8px;margin:2px}
 .t-green{background:rgba(34,197,94,.15);color:#22C55E;border:1px solid #22C55E}
 .t-gold{background:rgba(244,168,71,.15);color:#F4A847;border:1px solid #F4A847}
 .t-red{background:rgba(239,68,68,.15);color:#EF4444;border:1px solid #EF4444}
-.roi-table{width:100%;border-collapse:collapse;margin:12px 0}
-.roi-table th{text-align:left;padding:8px 12px;border-bottom:2px solid #1A3A5C;color:#F4A847;font-size:11px;letter-spacing:1px}
-.roi-table td{padding:8px 12px;border-bottom:1px solid rgba(26,58,92,.4);font-size:13px}
-.highlight{background:rgba(244,168,71,.1);border:1px solid #F4A847;padding:16px 20px;margin:16px 0;font-size:13px}
-.highlight strong{color:#F4A847}
-.quick-ref{background:#0D1B3E;border:1px solid #1A3A5C;padding:16px 20px;margin-bottom:12px}
-.quick-ref h4{color:#00B4D8;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
-.quick-ref p{font-size:12px;margin-bottom:4px}
-@media(max-width:768px){.container{padding:20px}.topbar{padding:14px 20px}}
+.divider{border:none;border-top:1px solid #1A3A5C;margin:30px 0}
+@media(max-width:768px){.container{padding:20px}.quick-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <h1>JAY'S CHEAT SHEET</h1>
-  <div class="topbar-sub">TQA Strategy Calls &bull; March 19, 2026 &bull; Keep this open during every call</div>
+  <h1>JAY &mdash; TQA REFERENCE CARD</h1>
+  <div class="topbar-sub">Everything you need to know. You handle the close your way.</div>
 </div>
 
 <div class="container">
 
-<!-- QUICK REF -->
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:30px">
-  <div class="quick-ref">
-    <h4>PROGRAM</h4>
-    <p>14-week cybersecurity career accelerator</p>
-    <p>Led by DJ Naronikar (28 yrs, CISO at Deloitte/EY/Shell)</p>
-    <p>250+ career transitions</p>
-    <p>92% placement rate</p>
-  </div>
-  <div class="quick-ref">
-    <h4>PRICING</h4>
-    <p><strong style="color:#22C55E;font-size:16px">$4,997</strong> Pay in Full (save ~$1K)</p>
-    <p><strong style="color:#F4A847;font-size:16px">$1,997/mo &times; 3</strong> Payment Plan</p>
-    <p style="color:#6B8FA8;margin-top:8px">Say: "about five thousand" or "about two thousand a month"</p>
-  </div>
-  <div class="quick-ref">
-    <h4>STRIPE LINKS</h4>
-    <p><a href="https://buy.stripe.com/eVqdR96tYaC7fTKdoM48006" style="color:#22C55E" target="_blank">PIF Link ($4,997)</a></p>
-    <p><a href="https://buy.stripe.com/cNi3cv5pUeSn9vmckI48007" style="color:#F4A847" target="_blank">Plan Link ($1,997/mo)</a></p>
-    <p style="color:#6B8FA8;margin-top:8px">Send during call. Stay on while they pay.</p>
-  </div>
+<!-- QUICK STATS -->
+<div class="quick-grid">
+  <div class="stat"><div class="stat-num">$4,997</div><div class="stat-label">PAY IN FULL</div></div>
+  <div class="stat"><div class="stat-num gold">$1,997</div><div class="stat-label">/MO &times; 3 MONTHS</div></div>
+  <div class="stat"><div class="stat-num teal">$1,000</div><div class="stat-label">1-ON-1 WITH DJ (1 HR)</div></div>
+  <div class="stat"><div class="stat-num green">FREE</div><div class="stat-label">STAY IN COMMUNITY</div></div>
 </div>
 
-<!-- CALL FLOW -->
-<div class="section">
-  <div class="section-title">YOUR CALL FLOW (30 min)</div>
-
-  <div class="flow-box">
-    <div class="step-num">STEP 1 &mdash; OPEN WARM (2 min)</div>
-    <p>"Hey [name], it's Jay from DJ's team at Quantum Achievers. Thanks for filling out that application. I want to be real with you &mdash; this isn't a sales call. I just want to understand where you're at and see if the program's actually a fit. If it's not, I'll tell you. Sound fair?"</p>
-  </div>
-
-  <div class="flow-box">
-    <div class="step-num">STEP 2 &mdash; DIAGNOSE (10 min)</div>
-    <p>Ask these in order. <em>Listen more than you talk.</em></p>
-    <p>1. "What's your current role? How long you been in IT?"</p>
-    <p>2. "What got you interested in cybersecurity?"</p>
-    <p>3. "What's been holding you back from making the move?"</p>
-    <p>4. "If you made the switch &mdash; what would that mean for you financially? For your family?"</p>
-    <p>5. "On a scale of 1-10, how serious are you about making this happen in the next 3-6 months?"</p>
-    <p style="color:#F4A847;margin-top:8px"><em>If they say 7+, they're closeable. If under 5, nurture &mdash; don't push.</em></p>
-  </div>
-
-  <div class="flow-box">
-    <div class="step-num">STEP 3 &mdash; MIRROR + BRIDGE (3 min)</div>
-    <p>"So let me make sure I've got this right &mdash; you're a [their role] with [X] years in IT, you've been thinking about cybersecurity because [their reason], and the main thing that's held you back is [their blocker]. Did I get that right?"</p>
-    <p style="margin-top:8px">"Here's the thing &mdash; that's almost exactly the same situation as [reference a success story]. Let me tell you what DJ's program actually does for someone in your position..."</p>
-  </div>
-
-  <div class="flow-box">
-    <div class="step-num">STEP 4 &mdash; PRESENT THE SOLUTION (5 min)</div>
-    <p>"Based on what you've told me, I think you'd be a strong fit. Here's what the 14 weeks look like for someone with your background:"</p>
-    <p>&bull; Weeks 1-3: Resume + LinkedIn rewrite in cybersecurity language. Recruiters start messaging within 2 weeks.</p>
-    <p>&bull; Weeks 4-8: Security+ prep. Most pass in 4-6 weeks.</p>
-    <p>&bull; Weeks 9-12: Real industry projects. Home lab. Portfolio that stands out.</p>
-    <p>&bull; Weeks 13-14: Interview prep. Mock interviews with DJ. Job applications start going out.</p>
-    <p>&bull; After week 14: Placement support continues. Until you're hired. Not 90 days &mdash; until you land the role.</p>
-  </div>
-
-  <div class="flow-box">
-    <div class="step-num">STEP 5 &mdash; ROI MATH (2 min)</div>
-    <p>"Let's do some quick math. You said you're at [their salary] right now. The average cybersecurity salary for someone with your experience is $120-150K. Even at the low end &mdash; that's a $[difference] per year increase.</p>
-    <p>The program is about five thousand. So you'd make that back in [X months] of the salary increase. After that it's pure upside &mdash; for the rest of your career.</p>
-    <p>That's not an expense. That's the highest ROI investment you'll make this year."</p>
-  </div>
-
-  <div class="flow-box" style="border-color:#22C55E">
-    <div class="step-num" style="color:#22C55E">STEP 6 &mdash; THE ASK (2 min)</div>
-    <p>"Based on everything you've told me, I think you're a strong fit. Let me tell you what the investment looks like, and then you tell me if it makes sense."</p>
-    <p>"The full program &mdash; 14 weeks with DJ, placement until you're hired, everything I just described &mdash; is forty-nine ninety-seven. Or about two thousand a month for three months."</p>
-    <p><strong style="color:#22C55E">"Does that work for your situation?"</strong></p>
-    <p style="margin-top:8px;color:#6B8FA8"><em>Then STOP TALKING. Let them respond. Silence is your friend.</em></p>
-  </div>
-
-  <div class="flow-box" style="border-color:#F4A847">
-    <div class="step-num" style="color:#F4A847">DOWNSELL LADDER (if $4,997 is too much)</div>
-    <p style="margin-bottom:12px">Don't drop price. Add options. Work DOWN this ladder:</p>
-    <p><strong style="color:#22C55E">Level 1: Full Program $4,997 PIF</strong> (try this first)</p>
-    <p>"Forty-nine ninety-seven, everything included, DJ personally until you're hired."</p>
-    <p style="margin-top:12px"><strong style="color:#F4A847">Level 2: Payment Plan $1,997/mo &times; 3</strong> (if PIF is too much)</p>
-    <p>"We have a payment plan &mdash; about two thousand a month for three months. Does that make it more workable?"</p>
-    <p style="margin-top:12px"><strong style="color:#00B4D8">Level 3: 1-on-1 with DJ $1,000 / 1 hour</strong> (if program is too much but they want DJ)</p>
-    <p>"If the full program isn't the right fit right now, DJ does private 1-on-1 sessions. One hour, one thousand dollars. He'll review your resume, map your transition plan, and give you a personalized roadmap. Some people start there and join the full program later."</p>
-    <p style="margin-top:12px"><strong style="color:#6B8FA8">Level 4: Stay in the community (free)</strong> (if nothing works right now)</p>
-    <p>"No pressure at all. Stay in the Telegram group &mdash; DJ posts tips and resources regularly. When the timing is right, you'll know. We'll be here."</p>
-    <p style="margin-top:12px;padding:12px;background:rgba(244,168,71,.1);border:1px solid #F4A847;color:#F4A847;font-size:12px"><strong>RULE:</strong> Always start at Level 1. Only move down when they say no to the current level. Never jump straight to the downsell.</p>
-  </div>
-
-  <div class="flow-box" style="border-color:#8B5CF6">
-    <div class="step-num" style="color:#8B5CF6">DJ CREDIBILITY BOMBS (use during the call)</div>
-    <p>Drop these naturally when building value:</p>
-    <p>&bull; "DJ is literally famous in India &mdash; TEDx talks, keynote speaker, CIO Choice Award 2026"</p>
-    <p>&bull; "He's been CISO across 8 countries &mdash; Deloitte, EY, Shell, ANZ"</p>
-    <p>&bull; "He's bringing in a major cybersecurity industry leader as a guest speaker in the 14-week program"</p>
-    <p>&bull; "250+ career transitions. 92% placement rate. This isn't theory &mdash; it's a system that's been proven hundreds of times"</p>
-    <p>&bull; "(ISC)2 Chapter President &mdash; Melbourne and Global Advisory. He's not just teaching cybersecurity, he's shaping the industry"</p>
-    <p>&bull; "Access to his 400+ company employer network. When DJ makes an introduction, they take the meeting."</p>
-  </div>
-</div>
-
-<!-- OBJECTION HANDLING -->
-<div class="section">
-  <div class="section-title">&#128165; OBJECTION HANDLING &mdash; Q&A CHEAT SHEET</div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"It's too expensive" / "I can't afford $5K"</div></div>
-    <div class="card-a">
-      <p><strong>Don't defend the price. Reframe it.</strong></p>
-      <p>"I hear you. Five thousand is real money. Let me ask you this &mdash; if the program gets you a $30K salary increase, what's the payback period? About 2 months. After that, it's pure profit for the rest of your career.</p>
-      <p>SANS charges nine thousand for ONE course. Bootcamps charge ten thousand plus. And they don't guarantee placement.</p>
-      <p>We also have a payment plan &mdash; <em>about two thousand a month for three months</em>. Does that make it more workable?"</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I need to talk to my wife/husband first"</div></div>
-    <div class="card-a">
-      <p><strong>This is real. Don't fight it. Equip them.</strong></p>
-      <p>"Totally respect that. Smart move. Here's what I'd suggest &mdash; let me send you a quick summary with the ROI math so you have something concrete to show them. Not a brochure &mdash; actual numbers.</p>
-      <p>A lot of our students' partners had the same hesitation. What usually tips it is when they see the salary data &mdash; $120-150K average, 750,000 unfilled jobs. It's not a gamble. It's a career move backed by data.</p>
-      <p><em>Can we book a call for tomorrow so I can answer any questions they have too?"</em></p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I don't have time" / "I'm working full-time"</div></div>
-    <div class="card-a">
-      <p><strong>90% of DJ's students work full-time during the program.</strong></p>
-      <p>"Most of our students are working full-time IT jobs. The program is designed for that. Live sessions are evenings/weekends. The real work is about 8-10 hours per week on top of your job.</p>
-      <p>Here's the honest question: if not now, when? Every month you wait is a month of higher salary you're leaving on the table. The people who make the switch aren't the ones with the most free time &mdash; they're the ones who decide this is important enough to make time for."</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"What if I don't get hired?"</div></div>
-    <div class="card-a">
-      <p><strong>The guarantee kills this objection dead.</strong></p>
-      <p>"DJ's guarantee is: we work with you until you're hired. Not 90 days. Not 6 months. Until you land the role. Period.</p>
-      <p>92% of our participants get placed. The 8% who don't? Most of them paused for personal reasons &mdash; not because the program didn't work.</p>
-      <p>You're not betting on yourself alone. You're betting on DJ's 28 years of connections, 400+ organizations, and a system that's worked 250+ times. <em>That's not a risk. That's the safest career move you'll make.</em>"</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I can learn this on YouTube / Udemy for free"</div></div>
-    <div class="card-a">
-      <p><strong>They're right about the content. Wrong about the outcome.</strong></p>
-      <p>"You absolutely can. The information is out there. Here's what's NOT out there: someone who's been CISO at Deloitte, EY, and Shell personally reviewing your resume, introducing you to hiring managers, and prepping you for interviews.</p>
-      <p>YouTube teaches you cybersecurity. DJ gets you hired in cybersecurity. Those are two very different things.</p>
-      <p>How long have you been thinking about this switch? [They'll say months or years.] <em>That's the difference. Information without direction keeps you thinking. A program with DJ gets you moving.</em>"</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I'm on an H-1B visa &mdash; can I switch jobs?"</div></div>
-    <div class="card-a">
-      <p><strong>DJ has helped dozens of H-1B holders make this transition.</strong></p>
-      <p>"Great question. DJ has mentored a lot of H-1B professionals through this exact situation. The short answer: yes, you can switch to a cybersecurity role on H-1B. Your employer sponsors the role, not the specific title.</p>
-      <p>Many of DJ's students either transitioned within their current company (IT to security) or found a new employer who sponsored the transfer. The 60-day grace period and H-1B portability make this doable if you plan it right.</p>
-      <p><em>DJ covers the visa strategy specifically in the program because it's one of the most common situations he sees.</em>"</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"Will AI replace cybersecurity jobs too?"</div></div>
-    <div class="card-a">
-      <p><strong>Opposite. AI is creating MORE cybersecurity jobs.</strong></p>
-      <p>"That's actually why this is the best time to make the move. Every company deploying AI needs people who understand security implications. Every AI system is a new attack surface.</p>
-      <p>750,000 unfilled cybersecurity positions in the US right now. That number is going UP, not down. Gartner, Forrester &mdash; every analyst is saying the same thing.</p>
-      <p><em>IT jobs are getting automated. Cybersecurity jobs are getting created. You're moving to the protected side.</em>"</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I need to think about it"</div></div>
-    <div class="card-a">
-      <p><strong>Don't push. But don't let them drift.</strong></p>
-      <p>"Totally fair. This is a big decision and I don't want you to rush it.</p>
-      <p>Here's what I'd suggest &mdash; I'll send you both enrollment links so you have them. Take tonight to think about it. But let's book a 10-minute call for tomorrow just to check in. That way if you have questions in the morning, I'm right there.</p>
-      <p><em>The people who usually move fastest are the ones who've been thinking about this the longest. And it sounds like you've been thinking about it for a while.</em></p>
-      <p style="color:#F4A847">The honest truth: this cohort fills up and we won't run another one for several weeks. I'm not saying that to pressure you &mdash; I'm saying it because I don't want you to decide 'yes' next week and find out there's no spot."</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"What makes this different from other bootcamps?"</div></div>
-    <div class="card-a">
-      <p><strong>DJ is the difference. And the guarantee.</strong></p>
-      <p>"Three things:</p>
-      <p>1. <em>DJ personally.</em> 28 years. CISO at Deloitte, EY, Shell. You're not learning from a TA who got certified last year. You're learning from someone who's been in the war room.</p>
-      <p>2. <em>Until-you're-hired guarantee.</em> Bootcamps give you a certificate and wish you luck. DJ works with you until you land the role. Not 90 days. Until.</p>
-      <p>3. <em>The network.</em> 400+ organizations. When DJ makes an introduction, people take the meeting. That access doesn't come with a Udemy course."</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"Is the payment plan interest-free?"</div></div>
-    <div class="card-a">
-      <p>"Yes &mdash; no interest. It's $1,997 a month for 3 months. Total is $5,991. Pay-in-full is $4,997, so you save almost a thousand dollars by paying upfront. But the payment plan is there if you need flexibility."</p>
-    </div>
-  </div>
-</div>
-
-<!-- RISK REVERSALS / GUARANTEES -->
-<div class="section">
-  <div class="section-title">&#128737; RISK REVERSALS &amp; GUARANTEES</div>
-
-  <div class="guarantee">
-    <h3>&#10003; UNTIL-YOU'RE-HIRED GUARANTEE</h3>
-    <p>"We don't put a time limit on placement support. We work with you until you land the role. Period. 92% placement rate. DJ stands behind that personally."</p>
-  </div>
-
-  <div class="guarantee">
-    <h3>&#10003; DJ PERSONALLY</h3>
-    <p>"This isn't a course with a faceless instructor. DJ is on every live session. He reviews your resume personally. He makes introductions from his own network. You have direct access to a 28-year CISO &mdash; that alone is worth more than the program fee."</p>
-  </div>
-
-  <div class="guarantee">
-    <h3>&#10003; PROVEN TRACK RECORD</h3>
-    <p>"250+ career transitions. 92% placement rate. Average salary increase of $30-50K. These aren't marketing numbers &mdash; these are real people who were in your exact position."</p>
-  </div>
-
-  <div class="guarantee">
-    <h3>&#10003; MARKET TIMING</h3>
-    <p>"750,000 unfilled cybersecurity jobs. 21% longer to fill than any other tech role. Companies offering relocation, signing bonuses, remote. The demand window this large won't last forever. Every month you wait is a month of higher salary you're leaving on the table."</p>
-  </div>
-
-  <div class="guarantee">
-    <h3>&#10003; ROI MATH</h3>
-    <p>"$5K investment &rarr; $30-50K annual salary increase. Payback in 2-3 months. After that, it's pure upside for the rest of your career. This isn't an expense &mdash; it's the highest-ROI investment you'll make this year."</p>
-  </div>
-</div>
-
-<!-- ROI TABLE -->
-<div class="section">
-  <div class="section-title">&#128200; ROI CALCULATOR (use during calls)</div>
-  <div style="background:#0D1B3E;border:1px solid #1A3A5C;padding:20px">
-    <table class="roi-table">
-      <tr><th>CURRENT SALARY</th><th>CYBER SALARY (AVG)</th><th>ANNUAL INCREASE</th><th>PAYBACK PERIOD</th><th>5-YEAR GAIN</th></tr>
-      <tr><td>$65,000</td><td>$120,000</td><td style="color:#22C55E">+$55,000</td><td style="color:#F4A847">~5 weeks</td><td style="color:#22C55E;font-weight:700">$270,000</td></tr>
-      <tr><td>$85,000</td><td>$130,000</td><td style="color:#22C55E">+$45,000</td><td style="color:#F4A847">~6 weeks</td><td style="color:#22C55E;font-weight:700">$220,000</td></tr>
-      <tr><td>$100,000</td><td>$145,000</td><td style="color:#22C55E">+$45,000</td><td style="color:#F4A847">~6 weeks</td><td style="color:#22C55E;font-weight:700">$220,000</td></tr>
-      <tr><td>$120,000</td><td>$165,000</td><td style="color:#22C55E">+$45,000</td><td style="color:#F4A847">~6 weeks</td><td style="color:#22C55E;font-weight:700">$220,000</td></tr>
-    </table>
-    <p style="font-size:12px;color:#6B8FA8;margin-top:12px">Ask their current salary early in the call. Use this table to show them the math in real-time.</p>
-  </div>
-</div>
-
-<!-- AFTER EACH CALL -->
-<div class="section">
-  <div class="section-title">&#9989; AFTER EACH CALL</div>
-  <div style="background:#0D1B3E;border:1px solid #1A3A5C;padding:20px;font-size:13px">
-    <p><strong style="color:#22C55E">If they PAID:</strong></p>
-    <p>&bull; Tag: <span class="tag t-green">tqa-paid</span> + <span class="tag t-green">tqa-pif</span> or <span class="tag t-gold">tqa-payment-plan</span></p>
-    <p>&bull; Say: "Welcome to TQA. DJ will personally reach out to you within 24 hours."</p>
-    <p>&bull; Text Dylan: "[Name] just enrolled! $[amount]"</p>
-    <p style="margin-top:16px"><strong style="color:#F4A847">If they need TIME:</strong></p>
-    <p>&bull; Tag: <span class="tag t-gold">warm-lead</span></p>
-    <p>&bull; Book follow-up call for tomorrow</p>
-    <p>&bull; Send both Stripe links via text RIGHT AFTER the call</p>
-    <p>&bull; "I'll check in tomorrow. No pressure."</p>
-    <p style="margin-top:16px"><strong style="color:#EF4444">If they said NO:</strong></p>
-    <p>&bull; Tag: <span class="tag t-red">cold-lead</span></p>
-    <p>&bull; "Totally respect that. You'll get the replay and resources from DJ."</p>
-    <p>&bull; Don't push. They'll get the nurture sequence automatically.</p>
-  </div>
-</div>
-
-<!-- STRIPE LINKS BIG -->
 <div class="stripe-box">
-  <div class="label">STRIPE LINKS &mdash; KEEP THESE READY</div>
-  <a href="https://buy.stripe.com/eVqdR96tYaC7fTKdoM48006" target="_blank">&#128176; PAY IN FULL ($4,997) &rarr; CLICK TO OPEN</a>
-  <a href="https://buy.stripe.com/cNi3cv5pUeSn9vmckI48007" target="_blank">&#128176; PAYMENT PLAN ($1,997/mo &times; 3) &rarr; CLICK TO OPEN</a>
-  <p style="color:#6B8FA8;font-size:11px;margin-top:8px">Send via Zoom chat, text, or screen share. Stay on the call while they complete payment.</p>
+  <div class="label">STRIPE LINKS &mdash; SEND DURING CALL</div>
+  <a href="https://buy.stripe.com/eVqdR96tYaC7fTKdoM48006" target="_blank">&#128176; PAY IN FULL $4,997</a>
+  <div class="secondary"><a href="https://buy.stripe.com/cNi3cv5pUeSn9vmckI48007" target="_blank">&#128176; PAYMENT PLAN $1,997/mo &times; 3</a></div>
+  <p style="color:#6B8FA8;font-size:11px;margin-top:8px">Stay on the call while they pay. Confirm receipt.</p>
 </div>
 
-<!-- WHAT HAPPENS AFTER THE CALL -->
+<div class="divider"></div>
+
+<!-- WHO IS DJ -->
 <div class="section">
-  <div class="section-title">&#128640; WHAT HAPPENS AFTER JAY HANGS UP</div>
-
-  <div style="background:#0D1B3E;border:2px solid #22C55E;padding:24px;margin-bottom:20px">
-    <div style="color:#22C55E;font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:12px">IF THEY PAID ON THE CALL</div>
-
-    <div style="display:flex;gap:0;margin-bottom:0">
-      <div style="display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0">
-        <div style="width:32px;height:32px;border-radius:50%;background:#22C55E;color:#040D1A;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">1</div>
-        <div style="width:2px;background:#1A3A5C;flex:1;min-height:20px"></div>
-      </div>
-      <div style="padding:0 0 20px 16px">
-        <div style="color:#22C55E;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:4px">IMMEDIATELY (still on the call)</div>
-        <div style="font-size:13px;color:#C8DDE8">
-          <p><strong style="color:#fff">Jay says:</strong> "Welcome to TQA. Here's what happens next:"</p>
-          <p>&bull; "You'll get a Stripe receipt in your email right now &mdash; check your inbox."</p>
-          <p>&bull; "DJ is going to personally reach out to you within 24 hours to welcome you."</p>
-          <p>&bull; "I'm sending you the Telegram group link right now &mdash; that's where the cohort hangs out."</p>
-          <p>&bull; "You'll get a full onboarding email within 24 hours with everything you need to get started."</p>
-          <p style="margin-top:8px"><strong style="color:#22C55E">Text them the Telegram group link before hanging up:</strong> <a href="https://t.me/+Hilhk9R5DEs5ZWZl" style="color:#00B4D8">t.me/+Hilhk9R5DEs5ZWZl</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:0;margin-bottom:0">
-      <div style="display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0">
-        <div style="width:32px;height:32px;border-radius:50%;background:#22C55E;color:#040D1A;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">2</div>
-        <div style="width:2px;background:#1A3A5C;flex:1;min-height:20px"></div>
-      </div>
-      <div style="padding:0 0 20px 16px">
-        <div style="color:#22C55E;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:4px">WITHIN 5 MINUTES (Jay does this)</div>
-        <div style="font-size:13px;color:#C8DDE8">
-          <p>&bull; Tag in GHL: <span class="tag t-green">tqa-paid</span> + <span class="tag t-green">tqa-pif</span> or <span class="tag t-gold">tqa-payment-plan</span></p>
-          <p>&bull; Move in pipeline: Webinar Funnel &rarr; <strong>Paid 1:1</strong></p>
-          <p>&bull; Text Dylan: "[Name] enrolled! $[amount] [PIF/Plan]"</p>
-          <p>&bull; Send them a quick text: "Hey [name], it's Jay. Welcome aboard. Look for DJ's email &mdash; he's excited to have you. See you in the Telegram group!"</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:0;margin-bottom:0">
-      <div style="display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0">
-        <div style="width:32px;height:32px;border-radius:50%;background:#F4A847;color:#040D1A;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">3</div>
-        <div style="width:2px;background:#1A3A5C;flex:1;min-height:20px"></div>
-      </div>
-      <div style="padding:0 0 20px 16px">
-        <div style="color:#F4A847;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:4px">WITHIN 24 HOURS (DJ does this)</div>
-        <div style="font-size:13px;color:#C8DDE8">
-          <p>&bull; DJ sends personal welcome email or voice note</p>
-          <p>&bull; "Hey [name], DJ here. Jay told me about your call. Really excited to have you in the cohort. Here's what week 1 looks like..."</p>
-          <p>&bull; This is CRITICAL &mdash; they just paid $5K, they need to feel DJ's personal attention immediately</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:0;margin-bottom:0">
-      <div style="display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0">
-        <div style="width:32px;height:32px;border-radius:50%;background:#00B4D8;color:#040D1A;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">4</div>
-        <div style="width:2px;background:transparent;flex:1;min-height:0"></div>
-      </div>
-      <div style="padding:0 0 8px 16px">
-        <div style="color:#00B4D8;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:4px">WITHIN 48 HOURS (Agresh automates this)</div>
-        <div style="font-size:13px;color:#C8DDE8">
-          <p>&bull; GHL sends onboarding email: program schedule, Zoom links, Slack/Telegram access, what to prepare</p>
-          <p>&bull; Move in Students pipeline: Payment Received &rarr; <strong>Onboarding Sent</strong></p>
-          <p>&bull; After they complete onboarding steps &rarr; <strong>Active Student</strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:#0D1B3E;border:2px solid #F4A847;padding:24px;margin-bottom:20px">
-    <div style="color:#F4A847;font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:12px">IF THEY SAID "LET ME THINK ABOUT IT"</div>
-
-    <div style="display:flex;gap:0;margin-bottom:0">
-      <div style="display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0">
-        <div style="width:32px;height:32px;border-radius:50%;background:#F4A847;color:#040D1A;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">1</div>
-        <div style="width:2px;background:#1A3A5C;flex:1;min-height:20px"></div>
-      </div>
-      <div style="padding:0 0 20px 16px">
-        <div style="color:#F4A847;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:4px">BEFORE HANGING UP</div>
-        <div style="font-size:13px;color:#C8DDE8">
-          <p><strong style="color:#fff">Jay says:</strong> "No pressure at all. Let me send you both links right now so you have them when you're ready. And let's book a quick 10-minute check-in for tomorrow &mdash; just so I'm there if questions come up. Sound good?"</p>
-          <p style="margin-top:8px">&bull; Send both Stripe links via text</p>
-          <p>&bull; Book follow-up call for tomorrow (use calendar link)</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:0;margin-bottom:0">
-      <div style="display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0">
-        <div style="width:32px;height:32px;border-radius:50%;background:#F4A847;color:#040D1A;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">2</div>
-        <div style="width:2px;background:#1A3A5C;flex:1;min-height:20px"></div>
-      </div>
-      <div style="padding:0 0 20px 16px">
-        <div style="color:#F4A847;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:4px">+1 HOUR (automated)</div>
-        <div style="font-size:13px;color:#C8DDE8">
-          <p>GHL sends SMS: "Great talking with you [name]! Here are your enrollment options when you're ready: [PIF link] [Plan link]. Questions? Reply here."</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:0;margin-bottom:0">
-      <div style="display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0">
-        <div style="width:32px;height:32px;border-radius:50%;background:#F4A847;color:#040D1A;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">3</div>
-        <div style="width:2px;background:#1A3A5C;flex:1;min-height:20px"></div>
-      </div>
-      <div style="padding:0 0 20px 16px">
-        <div style="color:#F4A847;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:4px">+24 HOURS (automated)</div>
-        <div style="font-size:13px;color:#C8DDE8">
-          <p>GHL sends email: "[name] &mdash; DJ is holding your spot. Enrollment closes end of week. [PIF link] [Plan link]"</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:0;margin-bottom:0">
-      <div style="display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0">
-        <div style="width:32px;height:32px;border-radius:50%;background:#F4A847;color:#040D1A;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">4</div>
-        <div style="width:2px;background:transparent;flex:1;min-height:0"></div>
-      </div>
-      <div style="padding:0 0 8px 16px">
-        <div style="color:#F4A847;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:4px">TOMORROW (Jay's follow-up call)</div>
-        <div style="font-size:13px;color:#C8DDE8">
-          <p>"Hey [name], just checking in. Did you have a chance to think it over? Any questions come up?"</p>
-          <p style="margin-top:8px"><em style="color:#F4A847">If they talked to spouse:</em> "What were their concerns? Let me address them directly."</p>
-          <p><em style="color:#F4A847">If they're ready:</em> "Awesome. I'm sending the link right now. Stay on while you complete it."</p>
-          <p><em style="color:#F4A847">If still unsure:</em> "No worries. The links are in your texts. Door's open whenever you're ready."</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:#0D1B3E;border:2px solid #EF4444;padding:24px">
-    <div style="color:#EF4444;font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:12px">IF THEY SAID NO</div>
-    <div style="font-size:13px;color:#C8DDE8">
-      <p>&bull; <strong style="color:#fff">Jay says:</strong> "Totally respect that. No hard feelings. You'll get the replay and some resources from DJ over the next few weeks. If anything changes, you've got my number."</p>
-      <p style="margin-top:12px">&bull; Tag: <span class="tag t-red">cold-lead</span></p>
-      <p>&bull; They automatically enter the 60-day nurture sequence (7 value emails from DJ)</p>
-      <p>&bull; Day 30: re-engagement email ("still thinking about this?")</p>
-      <p>&bull; If they click 3+ CTAs &rarr; auto re-scored &rarr; back to warm &rarr; Agresh reviews</p>
-      <p style="margin-top:12px;color:#6B8FA8"><em>Some of DJ's best students said no the first time. The nurture sequence is designed for this. Don't write anyone off.</em></p>
-    </div>
+  <div class="section-title">WHO DJ IS (drop these naturally)</div>
+  <div class="card">
+    <ul>
+      <li><strong style="color:#fff">28 years</strong> in cybersecurity. CISO at Deloitte, EY, Shell, ANZ</li>
+      <li><strong style="color:#fff">Famous in India</strong> &mdash; TEDx speaker, keynote at major security conferences</li>
+      <li><strong style="color:#fff">CIO Choice Award 2026</strong> &mdash; industry recognition, not self-awarded</li>
+      <li><strong style="color:#fff">(ISC)&sup2; Chapter President</strong> &mdash; Melbourne + Global Advisory board</li>
+      <li><strong style="color:#fff">250+ career transitions</strong> personally mentored</li>
+      <li><strong style="color:#fff">400+ company employer network</strong> &mdash; when DJ makes an intro, they take the meeting</li>
+      <li><strong style="color:#fff">8 countries</strong> &mdash; AU, Middle East, EU, India, USA</li>
+      <li><strong style="color:#fff">Bringing in a MAJOR cybersecurity industry leader</strong> as guest speaker in the 14-week program</li>
+      <li><strong style="color:#fff">He personally mentors every student</strong> &mdash; not a TA, not recordings, DJ himself</li>
+    </ul>
   </div>
 </div>
 
-<!-- THE FULL JOURNEY (visual summary) -->
+<!-- THE PROGRAM -->
 <div class="section">
-  <div class="section-title">&#127919; THE FULL STUDENT JOURNEY</div>
-  <div style="background:#0D1B3E;border:1px solid #1A3A5C;padding:24px;font-size:12px;text-align:center;line-height:2.2">
-    <span style="background:#00B4D8;color:#040D1A;padding:4px 12px;font-weight:700">WEBINAR</span>
-    <span style="color:#F4A847">&nbsp;&rarr;&nbsp;</span>
-    <span style="background:#8B5CF6;color:#fff;padding:4px 12px;font-weight:700">APPLICATION</span>
-    <span style="color:#F4A847">&nbsp;&rarr;&nbsp;</span>
-    <span style="background:#F4A847;color:#040D1A;padding:4px 12px;font-weight:700">JAY'S CALL</span>
-    <span style="color:#F4A847">&nbsp;&rarr;&nbsp;</span>
-    <span style="background:#22C55E;color:#040D1A;padding:4px 12px;font-weight:700">STRIPE PAYMENT</span>
-    <span style="color:#F4A847">&nbsp;&rarr;&nbsp;</span>
-    <span style="background:#22C55E;color:#040D1A;padding:4px 12px;font-weight:700">RECEIPT</span>
-    <br>
-    <span style="color:#F4A847">&darr;&nbsp;</span>
-    <br>
-    <span style="background:#00B4D8;color:#040D1A;padding:4px 12px;font-weight:700">JAY TEXTS: Welcome + Telegram link</span>
-    <span style="color:#F4A847">&nbsp;&rarr;&nbsp;</span>
-    <span style="background:#F4A847;color:#040D1A;padding:4px 12px;font-weight:700">DJ PERSONAL WELCOME (24hr)</span>
-    <span style="color:#F4A847">&nbsp;&rarr;&nbsp;</span>
-    <span style="background:#22C55E;color:#040D1A;padding:4px 12px;font-weight:700">ONBOARDING EMAIL (48hr)</span>
-    <br>
-    <span style="color:#F4A847">&darr;&nbsp;</span>
-    <br>
-    <span style="background:#22C55E;color:#040D1A;padding:4px 16px;font-weight:900;font-size:14px">&#128640; WEEK 1 STARTS &mdash; ACTIVE STUDENT</span>
+  <div class="section-title">WHAT THEY GET (14 weeks)</div>
+  <div class="card">
+    <h3>Phase 1 &mdash; Weeks 1-2: Foundation</h3>
+    <ul>
+      <li>1-on-1 consultation with DJ</li>
+      <li>LinkedIn audit + rewrite in cybersecurity language</li>
+      <li>Personalized certification roadmap</li>
+      <li>Recruiters start messaging within 2 weeks of the rewrite</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Phase 2 &mdash; Weeks 3-10: Technical Core</h3>
+    <ul>
+      <li>Network security, GRC, cloud security, incident response</li>
+      <li>Hands-on labs (not simulations &mdash; real scenarios from DJ's career)</li>
+      <li>Security+ certification prep &mdash; 90%+ pass rate, most in 4-6 weeks</li>
+      <li>40+ hours of training content + 5 workbooks</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Phase 3 &mdash; Weeks 11-12: Job-Ready</h3>
+    <ul>
+      <li>Full resume rebuild for cybersecurity roles</li>
+      <li>LinkedIn optimization &mdash; hidden job market access (70% of cyber jobs never posted)</li>
+      <li>Direct recruiter introductions from DJ's network</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Phase 4 &mdash; Weeks 13-14: Placement</h3>
+    <ul>
+      <li>3+ mock interviews with DJ</li>
+      <li>Salary negotiation coaching</li>
+      <li>Direct employer introductions</li>
+      <li>If not hired by week 14 &mdash; DJ works with them an extra 4 weeks personally until they are</li>
+    </ul>
   </div>
 </div>
 
-<div style="text-align:center;padding:40px 0;color:#6B8FA8;font-size:11px;letter-spacing:2px">
-  59 HOT LEADS &bull; $5K EACH &bull; LET'S GO JAY
+<!-- GUARANTEES -->
+<div class="section">
+  <div class="section-title">GUARANTEES &amp; RISK REVERSALS</div>
+  <div class="card" style="border-color:#22C55E">
+    <h3 class="green">&#10003; "UNTIL YOU'RE HIRED" GUARANTEE</h3>
+    <p>Not 14 weeks. Not 90 days. <strong style="color:#22C55E">Until they land the role.</strong> If they need extra time, DJ works with them personally for an additional 4 weeks. 92% placement rate.</p>
+  </div>
+  <div class="card" style="border-color:#22C55E">
+    <h3 class="green">&#10003; THE PAY INCREASE ALONE SELLS IT</h3>
+    <p>IT Support $50-65K &rarr; SOC Analyst $65-95K &rarr; Security Engineer $110-140K &rarr; Architect/CISO $180-250K+</p>
+    <p><strong style="color:#22C55E">$5K investment pays back in 2-3 months of the salary increase. Then it's pure profit for life.</strong></p>
+  </div>
+  <div class="card" style="border-color:#EF4444">
+    <h3 class="red">&#9888; THE URGENCY IS REAL</h3>
+    <p><strong style="color:#EF4444">They are LOSING their jobs if they stay in IT.</strong></p>
+    <p>AI is automating tier-1 and tier-2 IT support right now. Helpdesk, sysadmin, network admin roles are being consolidated. H-1B holders are 3x more vulnerable to layoffs.</p>
+    <p>Cybersecurity is the OPPOSITE &mdash; 750,000+ unfilled jobs, growing 33% over 10 years. Every AI system needs security. This is the safe side of tech.</p>
+    <p><strong style="color:#fff">They're not investing $5K. They're insuring their career against AI replacement.</strong></p>
+  </div>
+  <div class="card">
+    <h3 class="teal">&#128200; SALARY COMPARISON (use their actual number)</h3>
+    <table style="width:100%;border-collapse:collapse;margin-top:8px">
+      <tr style="border-bottom:2px solid #1A3A5C"><th style="text-align:left;padding:8px;color:#F4A847;font-size:11px">NOW</th><th style="text-align:left;padding:8px;color:#F4A847;font-size:11px">AFTER TQA</th><th style="text-align:left;padding:8px;color:#F4A847;font-size:11px">INCREASE</th><th style="text-align:left;padding:8px;color:#F4A847;font-size:11px">PAYBACK</th></tr>
+      <tr style="border-bottom:1px solid rgba(26,58,92,.4)"><td style="padding:8px">$50-65K</td><td style="padding:8px">$65-95K</td><td style="padding:8px;color:#22C55E">+$30K/yr</td><td style="padding:8px;color:#F4A847">~2 months</td></tr>
+      <tr style="border-bottom:1px solid rgba(26,58,92,.4)"><td style="padding:8px">$65-80K</td><td style="padding:8px">$85-130K</td><td style="padding:8px;color:#22C55E">+$50K/yr</td><td style="padding:8px;color:#F4A847">~6 weeks</td></tr>
+      <tr style="border-bottom:1px solid rgba(26,58,92,.4)"><td style="padding:8px">$80-100K</td><td style="padding:8px">$110-150K</td><td style="padding:8px;color:#22C55E">+$50K/yr</td><td style="padding:8px;color:#F4A847">~6 weeks</td></tr>
+      <tr><td style="padding:8px">$100-120K</td><td style="padding:8px">$150-250K+</td><td style="padding:8px;color:#22C55E">+$80K+/yr</td><td style="padding:8px;color:#F4A847">~3 weeks</td></tr>
+    </table>
+    <p style="margin-top:8px;color:#6B8FA8;font-size:12px">3,300% ROI Year 1. Ask their salary early &mdash; use THEIR numbers.</p>
+  </div>
+</div>
+
+<!-- DOWNSELL LADDER -->
+<div class="section">
+  <div class="section-title">&#128178; DOWNSELL LADDER (work top to bottom)</div>
+  <div class="card" style="border-left:4px solid #22C55E">
+    <h3 class="green">LEVEL 1: Full Program &mdash; $4,997 PIF</h3>
+    <p>Everything. 14 weeks. DJ personally. Until you're hired.</p>
+    <p style="color:#6B8FA8;font-size:12px">Always start here.</p>
+  </div>
+  <div class="card" style="border-left:4px solid #F4A847">
+    <h3 class="gold">LEVEL 2: Payment Plan &mdash; $1,997/mo &times; 3</h3>
+    <p>Same program. Spread out. "Does that make it more workable?"</p>
+    <p style="color:#6B8FA8;font-size:12px">If PIF is too much upfront.</p>
+  </div>
+  <div class="card" style="border-left:4px solid #00B4D8">
+    <h3 class="teal">LEVEL 3: Private Session with DJ &mdash; $1,000 / 1 hour</h3>
+    <p>1-on-1 with DJ. Resume review, personalized transition plan, roadmap. Some people start here and join the full program later.</p>
+    <p style="color:#6B8FA8;font-size:12px">If the program feels too big right now but they want DJ.</p>
+  </div>
+  <div class="card" style="border-left:4px solid #6B8FA8">
+    <h3>LEVEL 4: Stay in the Community (free)</h3>
+    <p>Telegram group. DJ posts tips and resources. When the timing is right, they'll know. No hard feelings.</p>
+    <p style="color:#6B8FA8;font-size:12px">If nothing works right now. The nurture sequence handles the rest.</p>
+  </div>
+  <div class="highlight">
+    <strong>RULE:</strong> Start at Level 1. Only move down when they say no. Never skip levels. The salary increase and job security urgency should be doing most of the selling &mdash; the price is just the vehicle.
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHAT HAPPENS AFTER THEY PAY -->
+<div class="section">
+  <div class="section-title">&#128640; WHAT HAPPENS AFTER THEY PAY</div>
+  <div class="journey">
+    <div class="j-step">
+      <div class="j-num j-green">1</div>
+      <div class="j-text"><strong>ON THE CALL (you do this)</strong><br>"Welcome to TQA. Here's what happens next:" Tell them to check email for Stripe receipt. Text them the Telegram group link: <a href="https://t.me/+Hilhk9R5DEs5ZWZl" style="color:#00B4D8">t.me/+Hilhk9R5DEs5ZWZl</a>. Tell them DJ will personally reach out within 24 hours.</div>
+    </div>
+    <div class="j-step">
+      <div class="j-num j-green">2</div>
+      <div class="j-text"><strong>RIGHT AFTER YOU HANG UP (you do this)</strong><br>Tag in GHL: <span class="tag t-green">tqa-paid</span> + <span class="tag t-green">tqa-pif</span> or <span class="tag t-gold">tqa-payment-plan</span>. Text Dylan: "[Name] enrolled! $[amount]". Send them a quick text: "Welcome aboard. DJ's excited to have you."</div>
+    </div>
+    <div class="j-step">
+      <div class="j-num j-gold">3</div>
+      <div class="j-text"><strong>WITHIN 24 HOURS (DJ does this)</strong><br>DJ sends personal welcome &mdash; email or voice note. "Hey [name], Jay told me about your call. Really excited to have you." This kills buyer's remorse. They just paid $5K, they need to feel DJ's personal attention immediately.</div>
+    </div>
+    <div class="j-step">
+      <div class="j-num j-teal">4</div>
+      <div class="j-text"><strong>WITHIN 48 HOURS (automated)</strong><br>GHL sends onboarding email: program schedule, Zoom links, Telegram access, what to prepare for Week 1. They're officially in the system.</div>
+    </div>
+    <div class="j-step">
+      <div class="j-num j-green">5</div>
+      <div class="j-text"><strong>WEEK 1 STARTS</strong><br>1-on-1 consultation with DJ. LinkedIn audit. Cert roadmap. They're moving.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT HAPPENS IF THEY DON'T PAY -->
+<div class="section">
+  <div class="section-title">&#128336; IF THEY DON'T PAY TODAY</div>
+  <div class="journey">
+    <div class="j-step">
+      <div class="j-num j-gold">1</div>
+      <div class="j-text"><strong>BEFORE HANGING UP</strong><br>Send both Stripe links via text so they have them. Book a follow-up call for tomorrow: "Let's chat for 10 minutes tomorrow, just to check in."</div>
+    </div>
+    <div class="j-step">
+      <div class="j-num j-gold">2</div>
+      <div class="j-text"><strong>+1 HOUR (automated)</strong><br>GHL sends SMS with Stripe links: "Great talking with you! Here are your enrollment options when you're ready."</div>
+    </div>
+    <div class="j-step">
+      <div class="j-num j-gold">3</div>
+      <div class="j-text"><strong>+24 HOURS (automated)</strong><br>GHL sends email: "DJ is holding your spot. Enrollment closes end of week."</div>
+    </div>
+    <div class="j-step">
+      <div class="j-num j-teal">4</div>
+      <div class="j-text"><strong>TOMORROW (your follow-up call)</strong><br>Check in. If they talked to spouse, address concerns. If ready, send link. If still unsure, leave the door open.</div>
+    </div>
+    <div class="j-step">
+      <div class="j-num j-red">5</div>
+      <div class="j-text"><strong>IF THEY GO COLD</strong><br>Tag <span class="tag t-red">cold-lead</span>. They enter the 60-day nurture sequence automatically. Value emails from DJ. Re-engagement at Day 30. Some of DJ's best students said no the first time.</div>
+    </div>
+  </div>
+</div>
+
+<!-- AFTER EACH CALL TAGGING -->
+<div class="section">
+  <div class="section-title">&#9989; TAG AFTER EVERY CALL</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+    <div class="card" style="border-top:3px solid #22C55E;text-align:center">
+      <h3 class="green">PAID</h3>
+      <p><span class="tag t-green">tqa-paid</span></p>
+      <p><span class="tag t-green">tqa-pif</span> or <span class="tag t-gold">tqa-payment-plan</span></p>
+      <p style="font-size:11px;color:#6B8FA8;margin-top:8px">Text Dylan the win</p>
+    </div>
+    <div class="card" style="border-top:3px solid #F4A847;text-align:center">
+      <h3 class="gold">THINKING</h3>
+      <p><span class="tag t-gold">warm-lead</span></p>
+      <p style="font-size:11px;color:#6B8FA8;margin-top:8px">Book follow-up tomorrow<br>Send Stripe links via text</p>
+    </div>
+    <div class="card" style="border-top:3px solid #EF4444;text-align:center">
+      <h3 class="red">NOT NOW</h3>
+      <p><span class="tag t-red">cold-lead</span></p>
+      <p style="font-size:11px;color:#6B8FA8;margin-top:8px">Nurture sequence handles it<br>No hard feelings</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- KEY FACTS FOR OBJECTIONS -->
+<div class="section">
+  <div class="section-title">&#128161; FACTS FOR COMMON QUESTIONS</div>
+  <div class="card">
+    <h3>"Is there a guarantee?"</h3>
+    <p>Until you're hired. Not 14 weeks. If they need more time, DJ works with them an extra 4 weeks personally. 92% placement rate.</p>
+  </div>
+  <div class="card">
+    <h3>"I'm on H-1B"</h3>
+    <p>DJ has helped dozens of H-1B holders transition. You can switch roles on H-1B &mdash; employer sponsors the role, not the title. DJ covers visa strategy specifically in the program.</p>
+  </div>
+  <div class="card">
+    <h3>"I work full time"</h3>
+    <p>90% of students work full-time IT jobs during the program. 10-15 hrs/week. Evenings and weekends. Designed for working professionals.</p>
+  </div>
+  <div class="card">
+    <h3>"No cybersecurity background"</h3>
+    <p>60% of students come from pure IT. That's the whole point. DJ's system maps your existing IT skills to cybersecurity language. You already have 60-70% of what employers want.</p>
+  </div>
+  <div class="card">
+    <h3>"YouTube/Udemy is free"</h3>
+    <p>Information is free. DJ's network, resume review, mock interviews, employer introductions, and placement guarantee are not. YouTube teaches cybersecurity. DJ gets you hired.</p>
+  </div>
+  <div class="card">
+    <h3>"Need to talk to spouse"</h3>
+    <p>Book tomorrow's call. Bring their questions. Show them the salary data: $30-80K annual increase. The ROI math makes the conversation easy.</p>
+  </div>
+  <div class="card">
+    <h3>"Will AI replace cybersecurity?"</h3>
+    <p>Opposite. AI creates MORE cybersecurity jobs. Every AI system is a new attack surface. 750K unfilled positions going UP. IT is shrinking. Cybersecurity is growing. This is the safe side.</p>
+  </div>
+  <div class="card">
+    <h3>"What's different from bootcamps?"</h3>
+    <p>1) DJ personally (28 yrs CISO, not a TA). 2) Until-you're-hired guarantee (not "good luck after 90 days"). 3) His 400+ company network (intros, not just a certificate). Plus he's bringing in a major cybersecurity industry leader as a guest speaker.</p>
+  </div>
+</div>
+
+<!-- STRIPE AGAIN AT BOTTOM -->
+<div class="stripe-box">
+  <div class="label">STRIPE LINKS</div>
+  <a href="https://buy.stripe.com/eVqdR96tYaC7fTKdoM48006" target="_blank">&#128176; PAY IN FULL $4,997</a>
+  <div class="secondary"><a href="https://buy.stripe.com/cNi3cv5pUeSn9vmckI48007" target="_blank">&#128176; PAYMENT PLAN $1,997/mo &times; 3</a></div>
+</div>
+
+<div style="text-align:center;padding:40px 0">
+  <div style="color:#F4A847;font-size:14px;font-weight:900;letter-spacing:2px">YOU KNOW WHAT TO DO. GO CLOSE.</div>
+  <div style="color:#6B8FA8;font-size:12px;margin-top:8px">12:00 PM &mdash; 12:00 AM EST &bull; 59 hot leads &bull; $5K each</div>
 </div>
 
 </div>
