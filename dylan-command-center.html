@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DYLAN — Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#040D1A;color:#C8DDE8;line-height:1.6}
+.topbar{background:linear-gradient(135deg,#0D1B3E,#1a0d3e);border-bottom:3px solid #8B5CF6;padding:20px 40px;position:sticky;top:0;z-index:100}
+.topbar h1{color:#fff;font-size:24px;font-weight:900;letter-spacing:-0.5px}
+.topbar-sub{color:#8B5CF6;font-size:11px;letter-spacing:2px;margin-top:4px}
+.container{max-width:1200px;margin:0 auto;padding:30px 40px 80px}
+.section{margin-bottom:40px}
+.section-title{color:#fff;font-size:18px;font-weight:900;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1A3A5C;display:flex;align-items:center;gap:10px}
+.section-title .icon{font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.card{background:#0D1B3E;border:1px solid #1A3A5C;padding:16px;transition:all .15s;text-decoration:none;display:block;color:#C8DDE8}
+.card:hover{border-color:#8B5CF6;transform:translateY(-2px);box-shadow:0 4px 20px rgba(139,92,246,.15)}
+.card-label{font-size:9px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+.l-purple{color:#8B5CF6}
+.l-teal{color:#00B4D8}
+.l-green{color:#22C55E}
+.l-gold{color:#F4A847}
+.l-red{color:#EF4444}
+.card-title{color:#fff;font-size:14px;font-weight:700;margin-bottom:4px}
+.card-url{color:#6B8FA8;font-size:11px;word-break:break-all}
+.card-desc{color:#6B8FA8;font-size:11px;margin-top:6px}
+.status{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.s-green{background:#22C55E}
+.s-gold{background:#F4A847}
+.s-red{background:#EF4444}
+.divider{border:none;border-top:1px solid #1A3A5C;margin:30px 0}
+.api-table{width:100%;border-collapse:collapse;font-size:12px}
+.api-table th{text-align:left;padding:8px 12px;border-bottom:2px solid #1A3A5C;color:#8B5CF6;font-size:10px;letter-spacing:1px}
+.api-table td{padding:8px 12px;border-bottom:1px solid rgba(26,58,92,.3)}
+.api-table code{background:#091529;color:#00B4D8;padding:2px 6px;font-size:11px}
+.arch{background:#091529;border:1px solid #1A3A5C;padding:20px;font-family:monospace;font-size:12px;line-height:1.8;white-space:pre;overflow-x:auto;color:#C8DDE8}
+.arch .dir{color:#8B5CF6;font-weight:700}
+.arch .file{color:#00B4D8}
+.arch .desc{color:#6B8FA8}
+@media(max-width:768px){.container{padding:20px}.grid{grid-template-columns:1fr}.topbar{padding:14px 20px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>DYLAN EWING — COMMAND CENTER</h1>
+  <div class="topbar-sub">ALL SYSTEMS &bull; ALL LINKS &bull; ONE PAGE</div>
+</div>
+
+<div class="container">
+
+<!-- JARVIS -->
+<div class="section">
+  <div class="section-title"><span class="icon">🧠</span> JARVIS V2 — Core Systems</div>
+  <div class="grid">
+    <a href="https://jarvis-master-production.up.railway.app/api/status" target="_blank" class="card">
+      <div class="card-label l-purple">JARVIS API</div>
+      <div class="card-title"><span class="status s-green"></span>Status / Health Check</div>
+      <div class="card-url">jarvis-master-production.up.railway.app/api/status</div>
+    </a>
+    <a href="https://jarvis-master-production.up.railway.app/" target="_blank" class="card">
+      <div class="card-label l-purple">JARVIS DASHBOARD</div>
+      <div class="card-title"><span class="status s-gold"></span>Command Center HUB</div>
+      <div class="card-url">jarvis-master-production.up.railway.app</div>
+    </a>
+    <a href="https://railway.com/project/a581bb1c-379b-42ca-92ff-e79fd8aac657" target="_blank" class="card">
+      <div class="card-label l-purple">RAILWAY</div>
+      <div class="card-title">Railway Dashboard (deploys, logs)</div>
+      <div class="card-url">railway.com — dazzling-generosity</div>
+    </a>
+    <div class="card">
+      <div class="card-label l-purple">TELEGRAM BOTS</div>
+      <div class="card-title">@dylan_ewing_ai_bot (JARVIS) + @riya_cyber_bot (Riya)</div>
+      <div class="card-desc">Commands: STATUS / STOP / RESUME / QUEUE / TASKS / APPROVE</div>
+    </div>
+  </div>
+</div>
+
+<!-- PLUGIN API -->
+<div class="section">
+  <div class="section-title"><span class="icon">🔌</span> Plugin API — How Bots Talk to JARVIS</div>
+  <table class="api-table">
+    <tr><th>ENDPOINT</th><th>AUTH</th><th>PURPOSE</th></tr>
+    <tr><td><code>POST /api/alert</code></td><td>x-jarvis-secret</td><td>Any bot sends Dylan a Telegram alert</td></tr>
+    <tr><td><code>POST /api/decision</code></td><td>x-jarvis-secret</td><td>Feed events to JARVIS decision engine</td></tr>
+    <tr><td><code>POST /api/sheet</code></td><td>x-jarvis-secret</td><td>Write to Google Sheets data layer</td></tr>
+    <tr><td><code>POST /api/memory</code></td><td>x-jarvis-secret</td><td>Read/write JARVIS conversation memory</td></tr>
+    <tr><td><code>POST /api/search</code></td><td>x-jarvis-secret</td><td>Search memory across all chats</td></tr>
+    <tr><td><code>POST /api/register</code></td><td>x-jarvis-secret</td><td>Bot self-registration + heartbeat</td></tr>
+    <tr><td><code>GET /api/bots</code></td><td>x-jarvis-secret</td><td>List all registered bots</td></tr>
+    <tr><td><code>GET /api/clients</code></td><td>x-jarvis-secret</td><td>List all tracked clients</td></tr>
+    <tr><td><code>POST /api/tech-scan</code></td><td>x-jarvis-secret</td><td>Trigger CTO tech scan manually</td></tr>
+    <tr><td><code>GET /api/status</code></td><td>public</td><td>Health check (Railway uses this)</td></tr>
+  </table>
+</div>
+
+<hr class="divider">
+
+<!-- TQA -->
+<div class="section">
+  <div class="section-title"><span class="icon">🛡️</span> TQA (Quantum Achievers) — DJ Naronikar</div>
+  <div class="grid">
+    <a href="https://dmanwadefreedom.github.io/tqa-team-hub/webinar-war-room.html" target="_blank" class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">War Room (webinar gameplan)</div>
+      <div class="card-url">tqa-team-hub/webinar-war-room.html</div>
+    </a>
+    <a href="https://dmanwadefreedom.github.io/tqa-team-hub/jay-cheat-sheet.html" target="_blank" class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">Jay's Closer Reference Card</div>
+      <div class="card-url">tqa-team-hub/jay-cheat-sheet.html</div>
+    </a>
+    <a href="https://dmanwadefreedom.github.io/tqa-team-hub/agresh-build.html" target="_blank" class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">Agresh GHL Build Page</div>
+      <div class="card-url">tqa-team-hub/agresh-build.html</div>
+    </a>
+    <a href="https://tqa-hq.github.io/dashboard/" target="_blank" class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">TQA Dashboard (live GHL data)</div>
+      <div class="card-url">tqa-hq.github.io/dashboard</div>
+    </a>
+    <a href="https://thequantumachievers.com" target="_blank" class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">Website (WordPress)</div>
+      <div class="card-url">thequantumachievers.com</div>
+    </a>
+    <a href="https://app.gohighlevel.com" target="_blank" class="card">
+      <div class="card-label l-gold">TQA GHL</div>
+      <div class="card-title">GoHighLevel (DJ's location)</div>
+      <div class="card-desc">Location: cv0yehFtVK84960e2GsO</div>
+    </a>
+    <a href="https://evt.to/qktypkdbmtfs" target="_blank" class="card">
+      <div class="card-label l-green">TQA</div>
+      <div class="card-title">Round Robin Calendar (Jay/DJ/Dylan)</div>
+      <div class="card-url">evt.to/qktypkdbmtfs</div>
+    </a>
+    <a href="https://buy.stripe.com/eVqdR96tYaC7fTKdoM48006" target="_blank" class="card">
+      <div class="card-label l-green">STRIPE</div>
+      <div class="card-title">TQA Pay In Full — $4,997</div>
+    </a>
+    <a href="https://buy.stripe.com/cNi3cv5pUeSn9vmckI48007" target="_blank" class="card">
+      <div class="card-label l-green">STRIPE</div>
+      <div class="card-title">TQA Payment Plan — $1,997/mo x 3</div>
+    </a>
+    <a href="https://us06web.zoom.us/j/81058972043?pwd=aIeIWUCKDVlL0m0FG6wygc5SODNCA0.1" target="_blank" class="card">
+      <div class="card-label l-teal">ZOOM</div>
+      <div class="card-title">TQA Webinar Room</div>
+    </a>
+    <a href="https://t.me/+Hilhk9R5DEs5ZWZl" target="_blank" class="card">
+      <div class="card-label l-teal">TELEGRAM</div>
+      <div class="card-title">TQA Registrant Group</div>
+    </a>
+    <a href="https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=1126902421887543" target="_blank" class="card">
+      <div class="card-label l-teal">META ADS</div>
+      <div class="card-title">TQA Ad Account</div>
+      <div class="card-desc">act_1126902421887543</div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1NVZSK9hG60hgxzGiZPy8_jbeLXFmpKIj" target="_blank" class="card">
+      <div class="card-label l-teal">DRIVE</div>
+      <div class="card-title">TQA Shared Drive (all docs)</div>
+    </a>
+    <a href="https://dmanwadefreedom.github.io/tqa-team-hub/docs/TQA-Closer-Script.pdf" target="_blank" class="card">
+      <div class="card-label l-gold">DOCS</div>
+      <div class="card-title">Closer Script (Priya)</div>
+    </a>
+    <a href="https://dmanwadefreedom.github.io/tqa-team-hub/docs/TQA-Qualification-System.pdf" target="_blank" class="card">
+      <div class="card-label l-gold">DOCS</div>
+      <div class="card-title">Qualification System (scoring)</div>
+    </a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- DYLAN'S BUSINESSES -->
+<div class="section">
+  <div class="section-title"><span class="icon">💰</span> Dylan's Businesses</div>
+  <div class="grid">
+    <a href="https://cashclaw-site.pages.dev" target="_blank" class="card">
+      <div class="card-label l-green">CASHCLAW</div>
+      <div class="card-title"><span class="status s-green"></span>CashClaw Site (live)</div>
+      <div class="card-url">cashclaw-site.pages.dev</div>
+    </a>
+    <a href="https://buy.stripe.com/cNieVe7Ws1qZbEE7aUeQM1H" target="_blank" class="card">
+      <div class="card-label l-green">FREEDOM CODE</div>
+      <div class="card-title">Pattern Reset — $47</div>
+    </a>
+    <a href="https://freedom-code-bridge.dylanewing.workers.dev" target="_blank" class="card">
+      <div class="card-label l-teal">FREEDOM CODE</div>
+      <div class="card-title">Payment Bridge (CF Worker)</div>
+      <div class="card-desc">Stripe → GHL tag → Telegram alert</div>
+    </a>
+    <a href="https://app.gohighlevel.com" target="_blank" class="card">
+      <div class="card-label l-teal">GHL</div>
+      <div class="card-title">Dylan's GHL (main location)</div>
+      <div class="card-desc">Location: 0rTH6E3MWkHn5cjPmzLt</div>
+    </a>
+    <div class="card">
+      <div class="card-label l-purple">LEGALSHIELD</div>
+      <div class="card-title">Auto-Caller (Apps Script)</div>
+      <div class="card-desc">Gmail → parse lead → Vapi call → Sheet → Telegram</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-gold">ELEVATED AI</div>
+      <div class="card-title">Conor Drake — RE Brokers Campaign</div>
+      <div class="card-desc">Kaya (closer) + Lina (scraper) → Instantly</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CF WORKERS -->
+<div class="section">
+  <div class="section-title"><span class="icon">⚡</span> Cloudflare Workers</div>
+  <div class="grid">
+    <a href="https://webhook-guard.dylanewing.workers.dev" target="_blank" class="card">
+      <div class="card-label l-teal">CF WORKER</div>
+      <div class="card-title"><span class="status s-green"></span>Webhook Guard</div>
+      <div class="card-desc">Checks Telegram webhooks every 5 min. Auto-heals.</div>
+    </a>
+    <a href="https://instantly-proxy.dylanewing.workers.dev" target="_blank" class="card">
+      <div class="card-label l-teal">CF WORKER</div>
+      <div class="card-title"><span class="status s-gold"></span>Instantly Proxy</div>
+      <div class="card-desc">Wraps Instantly API. One key rotation point.</div>
+    </a>
+    <a href="https://lina-verifier.dylanewing.workers.dev" target="_blank" class="card">
+      <div class="card-label l-teal">CF WORKER</div>
+      <div class="card-title"><span class="status s-green"></span>Lina Email Verifier</div>
+      <div class="card-desc">Verifies scraped emails. Score >= 70 = valid.</div>
+    </a>
+    <a href="https://freedom-code-bridge.dylanewing.workers.dev" target="_blank" class="card">
+      <div class="card-label l-teal">CF WORKER</div>
+      <div class="card-title"><span class="status s-green"></span>Freedom Code Bridge</div>
+      <div class="card-desc">Stripe → GHL → Telegram for Freedom Code sales.</div>
+    </a>
+    <a href="https://cashclaw-webhook.dylanewing.workers.dev" target="_blank" class="card">
+      <div class="card-label l-teal">CF WORKER</div>
+      <div class="card-title"><span class="status s-green"></span>CashClaw Webhook</div>
+      <div class="card-desc">Stripe payments + audit requests → Telegram.</div>
+    </a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- VAPI -->
+<div class="section">
+  <div class="section-title"><span class="icon">📞</span> VAPI Voice Agents</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-label l-red">LEGALSHIELD</div>
+      <div class="card-title">Dylan (Outbound) — 359e3f10</div>
+      <div class="card-desc">ElevenLabs Dylan clone. Auto-calls from Gmail leads.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-red">LEGALSHIELD</div>
+      <div class="card-title">Inbound — 7869ebc0</div>
+      <div class="card-desc">ElevenLabs Dylan clone. Handles incoming calls.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-red">LEGALSHIELD</div>
+      <div class="card-title">Follow-Up — 9482a865</div>
+      <div class="card-desc">ElevenLabs Dylan clone. Follow-up calls.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">Webinar Confirmation (Priya) — b550c929</div>
+      <div class="card-desc">Elliot voice (FREE). Reminder calls to registrants.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">Closer (Priya) — 03c5a1b5</div>
+      <div class="card-desc">ElevenLabs clone. Sales follow-up calls.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">Re-Engage — 45896955</div>
+      <div class="card-desc">Claude Haiku brain. Re-engagement for old leads.</div>
+    </div>
+  </div>
+  <div style="margin-top:12px;padding:12px;background:#091529;border:1px solid #1A3A5C;font-size:12px">
+    <strong style="color:#C8DDE8">Phone:</strong> +1 (512) 967-0954 (Twilio) &bull; <strong style="color:#6B8FA8">All agents use Gemini Flash (free) with Claude Haiku fallback</strong>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- APPS SCRIPT BOTS -->
+<div class="section">
+  <div class="section-title"><span class="icon">🤖</span> Apps Script Bots</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-label l-green">CLOSER BOT</div>
+      <div class="card-title">Kaya — Cold Email Closer</div>
+      <div class="card-desc">Checks Instantly replies every 15 min. Auto-replies via Gemini. Conor's campaigns.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-green">SCRAPER BOT</div>
+      <div class="card-title">Lina — Lead Scraper Pipeline</div>
+      <div class="card-desc">Yellow Pages → verify → upload to Instantly. Every 30 min.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-purple">3-IN-1</div>
+      <div class="card-title">Ops HQ — Email Brain + Dee Briefing + Content</div>
+      <div class="card-desc">Email classification, daily VA briefing (7am), weekly content (Sunday 8pm).</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-green">FINANCE</div>
+      <div class="card-title">CFO Bot — Financial Hub</div>
+      <div class="card-desc">Stripe + Wise. Daily digest. Low balance alerts.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-red">LEGALSHIELD</div>
+      <div class="card-title">Auto-Caller — Gmail Lead Ingest</div>
+      <div class="card-desc">4LegalLeads email → parse → DNC check → Vapi call.</div>
+    </div>
+    <div class="card">
+      <div class="card-label l-gold">TQA</div>
+      <div class="card-title">TQA Dashboard API</div>
+      <div class="card-desc">Pulls GHL data, daily Telegram status, milestone alerts.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SOCIAL / CONTENT -->
+<div class="section">
+  <div class="section-title"><span class="icon">📱</span> Social Media &amp; Content</div>
+  <div class="grid">
+    <a href="https://instagram.com/dylan_ewing13" target="_blank" class="card">
+      <div class="card-label l-purple">INSTAGRAM</div>
+      <div class="card-title">@dylan_ewing13 (27.2K followers)</div>
+    </a>
+    <a href="https://tiktok.com/@dylan_in_philippines" target="_blank" class="card">
+      <div class="card-label l-purple">TIKTOK</div>
+      <div class="card-title">@dylan_in_philippines (18.1K followers)</div>
+    </a>
+    <a href="https://youtube.com/@Dylanewing_i_am_free" target="_blank" class="card">
+      <div class="card-label l-purple">YOUTUBE</div>
+      <div class="card-title">@Dylanewing_i_am_free (189 subs)</div>
+    </a>
+    <a href="https://facebook.com/dylan.ewing.79" target="_blank" class="card">
+      <div class="card-label l-purple">FACEBOOK</div>
+      <div class="card-title">dylan.ewing.79 (5.6K followers)</div>
+    </a>
+    <a href="https://linkedin.com/in/dylan-ewing" target="_blank" class="card">
+      <div class="card-label l-purple">LINKEDIN</div>
+      <div class="card-title">dylan-ewing (500+ connections)</div>
+    </a>
+    <a href="https://thedylanewing.com" target="_blank" class="card">
+      <div class="card-label l-purple">WEBSITE</div>
+      <div class="card-title">thedylanewing.com</div>
+    </a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ARCHITECTURE -->
+<div class="section">
+  <div class="section-title"><span class="icon">🏗️</span> JARVIS V2 Architecture</div>
+  <div class="arch"><span class="dir">jarvis-master/</span>
+  <span class="file">server.js</span>              <span class="desc">(54 lines — orchestrator + rate limiting)</span>
+  <span class="dir">lib/</span>
+    <span class="file">config.js</span>            <span class="desc">env vars, state, constants</span>
+    <span class="file">helpers.js</span>           <span class="desc">safeFetch, logError, askAI, getUptime</span>
+    <span class="file">telegram.js</span>          <span class="desc">all Telegram messaging</span>
+    <span class="file">sheets.js</span>            <span class="desc">Google Sheets read/write</span>
+    <span class="file">memory-v2.js</span>         <span class="desc">3-layer memory: hot/warm/cold + search + bot registry</span>
+    <span class="file">decision-engine.js</span>   <span class="desc">autonomous AI decisions (Gemini primary, Claude fallback)</span>
+    <span class="dir">chat/</span>
+      <span class="file">jarvis.js</span>          <span class="desc">JARVIS chat + commands (full CTO brain)</span>
+      <span class="file">riya.js</span>            <span class="desc">Riya TQA chat + welcome</span>
+    <span class="dir">extensions/</span>
+      <span class="file">content-pipeline.js</span> <span class="desc">fal.ai visual gen + approval</span>
+      <span class="file">openclaw.js</span>        <span class="desc">bot action layer (GHL, Vapi, Stripe, Instantly)</span>
+      <span class="file">stripe-webhooks.js</span> <span class="desc">payment events → Telegram alerts</span>
+      <span class="file">task-queue.js</span>      <span class="desc">Claude Code task bridge</span>
+      <span class="file">client-tracker.js</span>  <span class="desc">tracks all 5 businesses + their bots</span>
+      <span class="file">tech-scanner.js</span>    <span class="desc">daily CTO scan for free/better tools (7 AM ET)</span>
+    <span class="dir">monitors/</span>
+      <span class="file">vapi.js</span>            <span class="desc">check calls every 5 min</span>
+      <span class="file">callbacks.js</span>       <span class="desc">fire scheduled callbacks</span>
+      <span class="file">health.js</span>          <span class="desc">ping all APIs every 15 min</span>
+      <span class="file">ghl.js</span>             <span class="desc">check GHL contacts every 15 min</span>
+      <span class="file">followups.js</span>       <span class="desc">trigger follow-ups</span>
+      <span class="file">vapi-guard.js</span>      <span class="desc">verify Vapi prompts aren't wiped</span>
+      <span class="file">summaries.js</span>       <span class="desc">hourly + daily summaries</span>
+      <span class="file">index.js</span>           <span class="desc">schedules everything</span>
+  <span class="dir">routes/</span>
+    <span class="file">webhooks.js</span>          <span class="desc">Telegram: /webhook/jarvis, /webhook/riya, /webhook/content</span>
+    <span class="file">api.js</span>               <span class="desc">Plugin API (10 endpoints)</span>
+  <span class="dir">scripts/</span>
+    <span class="file">deploy.sh</span>            <span class="desc">safe deploy with auto-rollback</span></div>
+</div>
+
+<hr class="divider">
+
+<!-- DAILY SCHEDULE -->
+<div class="section">
+  <div class="section-title"><span class="icon">⏰</span> JARVIS Daily Schedule</div>
+  <div style="background:#0D1B3E;border:1px solid #1A3A5C;padding:20px;font-size:13px">
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:8px">
+      <div style="color:#00B4D8;font-weight:700">Every 5 min</div><div>Check Vapi calls + scheduled callbacks</div>
+      <div style="color:#00B4D8;font-weight:700">Every 10 min</div><div>Save conversation memory to Sheet</div>
+      <div style="color:#00B4D8;font-weight:700">Every 15 min</div><div>System health + GHL contacts + follow-ups + Vapi prompt guard</div>
+      <div style="color:#00B4D8;font-weight:700">Every hour</div><div>Hourly summary (if activity)</div>
+      <div style="color:#F4A847;font-weight:700">7 AM ET</div><div>CTO Tech Scanner — finds free/better tools, Telegram digest</div>
+      <div style="color:#F4A847;font-weight:700">8 AM ET</div><div>Client Health Report — status of all 5 businesses</div>
+      <div style="color:#F4A847;font-weight:700">Midnight ET</div><div>Daily summary + stats reset</div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK REFERENCE -->
+<div class="section">
+  <div class="section-title"><span class="icon">🔑</span> Quick Reference</div>
+  <div style="background:#0D1B3E;border:1px solid #1A3A5C;padding:20px;font-size:12px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <div style="color:#8B5CF6;font-weight:700;font-size:10px;letter-spacing:1px;margin-bottom:8px">KEY IDS</div>
+        <div>Vapi Outbound: 359e3f10-c126-473b-b108-a0b3f5f0f354</div>
+        <div>Vapi Phone: 5dc7500d-ebd0-4879-a6d7-6cd513dfd84f</div>
+        <div>Twilio: +1 (512) 967-0954</div>
+        <div>Dylan GHL: 0rTH6E3MWkHn5cjPmzLt</div>
+        <div>TQA GHL: cv0yehFtVK84960e2GsO</div>
+        <div>Memory Sheet: 11fJbeh-JP_HWhCg9tvfMZBCUGR6x79MIavdJ7aQgF0A</div>
+        <div>LegalShield Sheet: 1lstu5RslNhOtDUQuJugrfS12IOemyrde9f95uEPjXd8</div>
+      </div>
+      <div>
+        <div style="color:#8B5CF6;font-weight:700;font-size:10px;letter-spacing:1px;margin-bottom:8px">TEAM</div>
+        <div>Dee — VA (vasupport@expertvasolutions.com)</div>
+        <div>Agresh — GHL (agresh.va@gmail.com)</div>
+        <div>Shreyas — Ads (extromarketingagency@gmail.com)</div>
+        <div>Jay — Closer (jay@thequantumachievers.com)</div>
+        <div>DJ — TQA Lead (djrao.n@gmail.com)</div>
+        <div>Akshaya — Partner</div>
+        <div>Conor — Client (Elevated AI)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:40px 0 20px;color:#8B5CF6;font-size:12px;font-weight:700;letter-spacing:2px">
+  BUILT BY JARVIS V2 &bull; MARCH 2026
+</div>
+<div style="text-align:center;padding:0 0 40px;color:#1A3A5C;font-size:10px;letter-spacing:1px">
+  server.js: 54 lines &bull; 27 modules &bull; 3,011 lines total &bull; Plugin API &bull; Memory V2 &bull; Deploy Protection
+</div>
+
+</div>
+</body>
+</html>
