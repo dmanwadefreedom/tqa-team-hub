@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jay's Close Sheet — TQA March 19</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#040D1A;color:#C8DDE8;line-height:1.7}
+.topbar{background:#0D1B3E;border-bottom:3px solid #00B4D8;padding:16px 40px;position:sticky;top:0;z-index:100}
+.topbar h1{color:#fff;font-size:20px;font-weight:900}
+.topbar-sub{color:#00B4D8;font-size:12px;margin-top:2px}
+.container{max-width:900px;margin:0 auto;padding:30px 40px 80px}
+.section{margin-bottom:36px}
+.section-title{color:#fff;font-size:18px;font-weight:900;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1A3A5C}
+.card{background:#0D1B3E;border:1px solid #1A3A5C;margin-bottom:12px;overflow:hidden}
+.card-q{padding:14px 20px;cursor:pointer;display:flex;align-items:flex-start;gap:12px}
+.card-q:hover{background:#091529}
+.q-icon{color:#EF4444;font-size:18px;flex-shrink:0;margin-top:2px}
+.q-text{color:#fff;font-size:14px;font-weight:700}
+.card-a{padding:0 20px 16px 50px;font-size:13px;color:#C8DDE8;line-height:1.8}
+.card-a strong{color:#22C55E}
+.card-a em{color:#F4A847;font-style:normal;font-weight:600}
+.guarantee{background:rgba(34,197,94,.1);border:2px solid #22C55E;padding:20px;margin-bottom:12px}
+.guarantee h3{color:#22C55E;font-size:14px;font-weight:700;margin-bottom:8px}
+.guarantee p{font-size:13px;color:#C8DDE8}
+.stripe-box{background:#091529;border:2px solid #22C55E;padding:20px;margin:16px 0;text-align:center}
+.stripe-box .label{color:#6B8FA8;font-size:10px;letter-spacing:2px;font-weight:700;margin-bottom:8px}
+.stripe-box a{color:#22C55E;font-size:14px;font-weight:700;text-decoration:none;display:block;margin:8px 0}
+.flow-box{background:#091529;border-left:3px solid #00B4D8;padding:16px 20px;margin:12px 0;font-size:13px}
+.flow-box .step-num{color:#00B4D8;font-weight:900;font-size:12px;letter-spacing:1px;margin-bottom:4px}
+.tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:3px 8px;margin:2px}
+.t-green{background:rgba(34,197,94,.15);color:#22C55E;border:1px solid #22C55E}
+.t-gold{background:rgba(244,168,71,.15);color:#F4A847;border:1px solid #F4A847}
+.t-red{background:rgba(239,68,68,.15);color:#EF4444;border:1px solid #EF4444}
+.roi-table{width:100%;border-collapse:collapse;margin:12px 0}
+.roi-table th{text-align:left;padding:8px 12px;border-bottom:2px solid #1A3A5C;color:#F4A847;font-size:11px;letter-spacing:1px}
+.roi-table td{padding:8px 12px;border-bottom:1px solid rgba(26,58,92,.4);font-size:13px}
+.highlight{background:rgba(244,168,71,.1);border:1px solid #F4A847;padding:16px 20px;margin:16px 0;font-size:13px}
+.highlight strong{color:#F4A847}
+.quick-ref{background:#0D1B3E;border:1px solid #1A3A5C;padding:16px 20px;margin-bottom:12px}
+.quick-ref h4{color:#00B4D8;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.quick-ref p{font-size:12px;margin-bottom:4px}
+@media(max-width:768px){.container{padding:20px}.topbar{padding:14px 20px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>JAY'S CHEAT SHEET</h1>
+  <div class="topbar-sub">TQA Strategy Calls &bull; March 19, 2026 &bull; Keep this open during every call</div>
+</div>
+
+<div class="container">
+
+<!-- QUICK REF -->
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:30px">
+  <div class="quick-ref">
+    <h4>PROGRAM</h4>
+    <p>14-week cybersecurity career accelerator</p>
+    <p>Led by DJ Naronikar (28 yrs, CISO at Deloitte/EY/Shell)</p>
+    <p>250+ career transitions</p>
+    <p>92% placement rate</p>
+  </div>
+  <div class="quick-ref">
+    <h4>PRICING</h4>
+    <p><strong style="color:#22C55E;font-size:16px">$4,997</strong> Pay in Full (save ~$1K)</p>
+    <p><strong style="color:#F4A847;font-size:16px">$1,997/mo &times; 3</strong> Payment Plan</p>
+    <p style="color:#6B8FA8;margin-top:8px">Say: "about five thousand" or "about two thousand a month"</p>
+  </div>
+  <div class="quick-ref">
+    <h4>STRIPE LINKS</h4>
+    <p><a href="https://buy.stripe.com/eVqdR96tYaC7fTKdoM48006" style="color:#22C55E" target="_blank">PIF Link ($4,997)</a></p>
+    <p><a href="https://buy.stripe.com/cNi3cv5pUeSn9vmckI48007" style="color:#F4A847" target="_blank">Plan Link ($1,997/mo)</a></p>
+    <p style="color:#6B8FA8;margin-top:8px">Send during call. Stay on while they pay.</p>
+  </div>
+</div>
+
+<!-- CALL FLOW -->
+<div class="section">
+  <div class="section-title">YOUR CALL FLOW (30 min)</div>
+
+  <div class="flow-box">
+    <div class="step-num">STEP 1 &mdash; OPEN WARM (2 min)</div>
+    <p>"Hey [name], it's Jay from DJ's team at Quantum Achievers. Thanks for filling out that application. I want to be real with you &mdash; this isn't a sales call. I just want to understand where you're at and see if the program's actually a fit. If it's not, I'll tell you. Sound fair?"</p>
+  </div>
+
+  <div class="flow-box">
+    <div class="step-num">STEP 2 &mdash; DIAGNOSE (10 min)</div>
+    <p>Ask these in order. <em>Listen more than you talk.</em></p>
+    <p>1. "What's your current role? How long you been in IT?"</p>
+    <p>2. "What got you interested in cybersecurity?"</p>
+    <p>3. "What's been holding you back from making the move?"</p>
+    <p>4. "If you made the switch &mdash; what would that mean for you financially? For your family?"</p>
+    <p>5. "On a scale of 1-10, how serious are you about making this happen in the next 3-6 months?"</p>
+    <p style="color:#F4A847;margin-top:8px"><em>If they say 7+, they're closeable. If under 5, nurture &mdash; don't push.</em></p>
+  </div>
+
+  <div class="flow-box">
+    <div class="step-num">STEP 3 &mdash; MIRROR + BRIDGE (3 min)</div>
+    <p>"So let me make sure I've got this right &mdash; you're a [their role] with [X] years in IT, you've been thinking about cybersecurity because [their reason], and the main thing that's held you back is [their blocker]. Did I get that right?"</p>
+    <p style="margin-top:8px">"Here's the thing &mdash; that's almost exactly the same situation as [reference a success story]. Let me tell you what DJ's program actually does for someone in your position..."</p>
+  </div>
+
+  <div class="flow-box">
+    <div class="step-num">STEP 4 &mdash; PRESENT THE SOLUTION (5 min)</div>
+    <p>"Based on what you've told me, I think you'd be a strong fit. Here's what the 14 weeks look like for someone with your background:"</p>
+    <p>&bull; Weeks 1-3: Resume + LinkedIn rewrite in cybersecurity language. Recruiters start messaging within 2 weeks.</p>
+    <p>&bull; Weeks 4-8: Security+ prep. Most pass in 4-6 weeks.</p>
+    <p>&bull; Weeks 9-12: Real industry projects. Home lab. Portfolio that stands out.</p>
+    <p>&bull; Weeks 13-14: Interview prep. Mock interviews with DJ. Job applications start going out.</p>
+    <p>&bull; After week 14: Placement support continues. Until you're hired. Not 90 days &mdash; until you land the role.</p>
+  </div>
+
+  <div class="flow-box">
+    <div class="step-num">STEP 5 &mdash; ROI MATH (2 min)</div>
+    <p>"Let's do some quick math. You said you're at [their salary] right now. The average cybersecurity salary for someone with your experience is $120-150K. Even at the low end &mdash; that's a $[difference] per year increase.</p>
+    <p>The program is about five thousand. So you'd make that back in [X months] of the salary increase. After that it's pure upside &mdash; for the rest of your career.</p>
+    <p>That's not an expense. That's the highest ROI investment you'll make this year."</p>
+  </div>
+
+  <div class="flow-box" style="border-color:#22C55E">
+    <div class="step-num" style="color:#22C55E">STEP 6 &mdash; THE ASK (2 min)</div>
+    <p>"Based on everything you've told me, I think you're a great fit and DJ would love to have you in this cohort. The investment is forty-nine ninety-seven, or about two thousand a month for three months.</p>
+    <p><strong style="color:#22C55E">Want me to send you the enrollment link right now?"</strong></p>
+    <p style="margin-top:8px;color:#6B8FA8"><em>Then STOP TALKING. Let them respond. Silence is your friend.</em></p>
+  </div>
+</div>
+
+<!-- OBJECTION HANDLING -->
+<div class="section">
+  <div class="section-title">&#128165; OBJECTION HANDLING &mdash; Q&A CHEAT SHEET</div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"It's too expensive" / "I can't afford $5K"</div></div>
+    <div class="card-a">
+      <p><strong>Don't defend the price. Reframe it.</strong></p>
+      <p>"I hear you. Five thousand is real money. Let me ask you this &mdash; if the program gets you a $30K salary increase, what's the payback period? About 2 months. After that, it's pure profit for the rest of your career.</p>
+      <p>SANS charges nine thousand for ONE course. Bootcamps charge ten thousand plus. And they don't guarantee placement.</p>
+      <p>We also have a payment plan &mdash; <em>about two thousand a month for three months</em>. Does that make it more workable?"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I need to talk to my wife/husband first"</div></div>
+    <div class="card-a">
+      <p><strong>This is real. Don't fight it. Equip them.</strong></p>
+      <p>"Totally respect that. Smart move. Here's what I'd suggest &mdash; let me send you a quick summary with the ROI math so you have something concrete to show them. Not a brochure &mdash; actual numbers.</p>
+      <p>A lot of our students' partners had the same hesitation. What usually tips it is when they see the salary data &mdash; $120-150K average, 750,000 unfilled jobs. It's not a gamble. It's a career move backed by data.</p>
+      <p><em>Can we book a call for tomorrow so I can answer any questions they have too?"</em></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I don't have time" / "I'm working full-time"</div></div>
+    <div class="card-a">
+      <p><strong>90% of DJ's students work full-time during the program.</strong></p>
+      <p>"Most of our students are working full-time IT jobs. The program is designed for that. Live sessions are evenings/weekends. The real work is about 8-10 hours per week on top of your job.</p>
+      <p>Here's the honest question: if not now, when? Every month you wait is a month of higher salary you're leaving on the table. The people who make the switch aren't the ones with the most free time &mdash; they're the ones who decide this is important enough to make time for."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"What if I don't get hired?"</div></div>
+    <div class="card-a">
+      <p><strong>The guarantee kills this objection dead.</strong></p>
+      <p>"DJ's guarantee is: we work with you until you're hired. Not 90 days. Not 6 months. Until you land the role. Period.</p>
+      <p>92% of our participants get placed. The 8% who don't? Most of them paused for personal reasons &mdash; not because the program didn't work.</p>
+      <p>You're not betting on yourself alone. You're betting on DJ's 28 years of connections, 400+ organizations, and a system that's worked 250+ times. <em>That's not a risk. That's the safest career move you'll make.</em>"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I can learn this on YouTube / Udemy for free"</div></div>
+    <div class="card-a">
+      <p><strong>They're right about the content. Wrong about the outcome.</strong></p>
+      <p>"You absolutely can. The information is out there. Here's what's NOT out there: someone who's been CISO at Deloitte, EY, and Shell personally reviewing your resume, introducing you to hiring managers, and prepping you for interviews.</p>
+      <p>YouTube teaches you cybersecurity. DJ gets you hired in cybersecurity. Those are two very different things.</p>
+      <p>How long have you been thinking about this switch? [They'll say months or years.] <em>That's the difference. Information without direction keeps you thinking. A program with DJ gets you moving.</em>"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I'm on an H-1B visa &mdash; can I switch jobs?"</div></div>
+    <div class="card-a">
+      <p><strong>DJ has helped dozens of H-1B holders make this transition.</strong></p>
+      <p>"Great question. DJ has mentored a lot of H-1B professionals through this exact situation. The short answer: yes, you can switch to a cybersecurity role on H-1B. Your employer sponsors the role, not the specific title.</p>
+      <p>Many of DJ's students either transitioned within their current company (IT to security) or found a new employer who sponsored the transfer. The 60-day grace period and H-1B portability make this doable if you plan it right.</p>
+      <p><em>DJ covers the visa strategy specifically in the program because it's one of the most common situations he sees.</em>"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"Will AI replace cybersecurity jobs too?"</div></div>
+    <div class="card-a">
+      <p><strong>Opposite. AI is creating MORE cybersecurity jobs.</strong></p>
+      <p>"That's actually why this is the best time to make the move. Every company deploying AI needs people who understand security implications. Every AI system is a new attack surface.</p>
+      <p>750,000 unfilled cybersecurity positions in the US right now. That number is going UP, not down. Gartner, Forrester &mdash; every analyst is saying the same thing.</p>
+      <p><em>IT jobs are getting automated. Cybersecurity jobs are getting created. You're moving to the protected side.</em>"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"I need to think about it"</div></div>
+    <div class="card-a">
+      <p><strong>Don't push. But don't let them drift.</strong></p>
+      <p>"Totally fair. This is a big decision and I don't want you to rush it.</p>
+      <p>Here's what I'd suggest &mdash; I'll send you both enrollment links so you have them. Take tonight to think about it. But let's book a 10-minute call for tomorrow just to check in. That way if you have questions in the morning, I'm right there.</p>
+      <p><em>The people who usually move fastest are the ones who've been thinking about this the longest. And it sounds like you've been thinking about it for a while.</em></p>
+      <p style="color:#F4A847">The honest truth: this cohort fills up and we won't run another one for several weeks. I'm not saying that to pressure you &mdash; I'm saying it because I don't want you to decide 'yes' next week and find out there's no spot."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"What makes this different from other bootcamps?"</div></div>
+    <div class="card-a">
+      <p><strong>DJ is the difference. And the guarantee.</strong></p>
+      <p>"Three things:</p>
+      <p>1. <em>DJ personally.</em> 28 years. CISO at Deloitte, EY, Shell. You're not learning from a TA who got certified last year. You're learning from someone who's been in the war room.</p>
+      <p>2. <em>Until-you're-hired guarantee.</em> Bootcamps give you a certificate and wish you luck. DJ works with you until you land the role. Not 90 days. Until.</p>
+      <p>3. <em>The network.</em> 400+ organizations. When DJ makes an introduction, people take the meeting. That access doesn't come with a Udemy course."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-q"><div class="q-icon">Q</div><div class="q-text">"Is the payment plan interest-free?"</div></div>
+    <div class="card-a">
+      <p>"Yes &mdash; no interest. It's $1,997 a month for 3 months. Total is $5,991. Pay-in-full is $4,997, so you save almost a thousand dollars by paying upfront. But the payment plan is there if you need flexibility."</p>
+    </div>
+  </div>
+</div>
+
+<!-- RISK REVERSALS / GUARANTEES -->
+<div class="section">
+  <div class="section-title">&#128737; RISK REVERSALS &amp; GUARANTEES</div>
+
+  <div class="guarantee">
+    <h3>&#10003; UNTIL-YOU'RE-HIRED GUARANTEE</h3>
+    <p>"We don't put a time limit on placement support. We work with you until you land the role. Period. 92% placement rate. DJ stands behind that personally."</p>
+  </div>
+
+  <div class="guarantee">
+    <h3>&#10003; DJ PERSONALLY</h3>
+    <p>"This isn't a course with a faceless instructor. DJ is on every live session. He reviews your resume personally. He makes introductions from his own network. You have direct access to a 28-year CISO &mdash; that alone is worth more than the program fee."</p>
+  </div>
+
+  <div class="guarantee">
+    <h3>&#10003; PROVEN TRACK RECORD</h3>
+    <p>"250+ career transitions. 92% placement rate. Average salary increase of $30-50K. These aren't marketing numbers &mdash; these are real people who were in your exact position."</p>
+  </div>
+
+  <div class="guarantee">
+    <h3>&#10003; MARKET TIMING</h3>
+    <p>"750,000 unfilled cybersecurity jobs. 21% longer to fill than any other tech role. Companies offering relocation, signing bonuses, remote. The demand window this large won't last forever. Every month you wait is a month of higher salary you're leaving on the table."</p>
+  </div>
+
+  <div class="guarantee">
+    <h3>&#10003; ROI MATH</h3>
+    <p>"$5K investment &rarr; $30-50K annual salary increase. Payback in 2-3 months. After that, it's pure upside for the rest of your career. This isn't an expense &mdash; it's the highest-ROI investment you'll make this year."</p>
+  </div>
+</div>
+
+<!-- ROI TABLE -->
+<div class="section">
+  <div class="section-title">&#128200; ROI CALCULATOR (use during calls)</div>
+  <div style="background:#0D1B3E;border:1px solid #1A3A5C;padding:20px">
+    <table class="roi-table">
+      <tr><th>CURRENT SALARY</th><th>CYBER SALARY (AVG)</th><th>ANNUAL INCREASE</th><th>PAYBACK PERIOD</th><th>5-YEAR GAIN</th></tr>
+      <tr><td>$65,000</td><td>$120,000</td><td style="color:#22C55E">+$55,000</td><td style="color:#F4A847">~5 weeks</td><td style="color:#22C55E;font-weight:700">$270,000</td></tr>
+      <tr><td>$85,000</td><td>$130,000</td><td style="color:#22C55E">+$45,000</td><td style="color:#F4A847">~6 weeks</td><td style="color:#22C55E;font-weight:700">$220,000</td></tr>
+      <tr><td>$100,000</td><td>$145,000</td><td style="color:#22C55E">+$45,000</td><td style="color:#F4A847">~6 weeks</td><td style="color:#22C55E;font-weight:700">$220,000</td></tr>
+      <tr><td>$120,000</td><td>$165,000</td><td style="color:#22C55E">+$45,000</td><td style="color:#F4A847">~6 weeks</td><td style="color:#22C55E;font-weight:700">$220,000</td></tr>
+    </table>
+    <p style="font-size:12px;color:#6B8FA8;margin-top:12px">Ask their current salary early in the call. Use this table to show them the math in real-time.</p>
+  </div>
+</div>
+
+<!-- AFTER EACH CALL -->
+<div class="section">
+  <div class="section-title">&#9989; AFTER EACH CALL</div>
+  <div style="background:#0D1B3E;border:1px solid #1A3A5C;padding:20px;font-size:13px">
+    <p><strong style="color:#22C55E">If they PAID:</strong></p>
+    <p>&bull; Tag: <span class="tag t-green">tqa-paid</span> + <span class="tag t-green">tqa-pif</span> or <span class="tag t-gold">tqa-payment-plan</span></p>
+    <p>&bull; Say: "Welcome to TQA. DJ will personally reach out to you within 24 hours."</p>
+    <p>&bull; Text Dylan: "[Name] just enrolled! $[amount]"</p>
+    <p style="margin-top:16px"><strong style="color:#F4A847">If they need TIME:</strong></p>
+    <p>&bull; Tag: <span class="tag t-gold">warm-lead</span></p>
+    <p>&bull; Book follow-up call for tomorrow</p>
+    <p>&bull; Send both Stripe links via text RIGHT AFTER the call</p>
+    <p>&bull; "I'll check in tomorrow. No pressure."</p>
+    <p style="margin-top:16px"><strong style="color:#EF4444">If they said NO:</strong></p>
+    <p>&bull; Tag: <span class="tag t-red">cold-lead</span></p>
+    <p>&bull; "Totally respect that. You'll get the replay and resources from DJ."</p>
+    <p>&bull; Don't push. They'll get the nurture sequence automatically.</p>
+  </div>
+</div>
+
+<!-- STRIPE LINKS BIG -->
+<div class="stripe-box">
+  <div class="label">STRIPE LINKS &mdash; KEEP THESE READY</div>
+  <a href="https://buy.stripe.com/eVqdR96tYaC7fTKdoM48006" target="_blank">&#128176; PAY IN FULL ($4,997) &rarr; CLICK TO OPEN</a>
+  <a href="https://buy.stripe.com/cNi3cv5pUeSn9vmckI48007" target="_blank">&#128176; PAYMENT PLAN ($1,997/mo &times; 3) &rarr; CLICK TO OPEN</a>
+  <p style="color:#6B8FA8;font-size:11px;margin-top:8px">Send via Zoom chat, text, or screen share. Stay on the call while they complete payment.</p>
+</div>
+
+<div style="text-align:center;padding:40px 0;color:#6B8FA8;font-size:11px;letter-spacing:2px">
+  59 HOT LEADS &bull; $5K EACH &bull; LET'S GO JAY
+</div>
+
+</div>
+</body>
+</html>
